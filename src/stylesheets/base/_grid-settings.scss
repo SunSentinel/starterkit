@@ -1,0 +1,7 @@
+$max-width: em(720);
+
+$small-down: em(419);
+$small-up: em(420);
+
+$small-screen-down: new-breakpoint(max-width $small-down);
+$small-screen-up: new-breakpoint(min-width $small-up);
