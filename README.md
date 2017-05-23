@@ -15,7 +15,7 @@ What's included:
 - [pym.js](http://blog.apps.npr.org/pym.js/)
 
 ```
-git clone GIT URL GOES HERE MyApp
+git clone https://github.com/SunSentinel/starterkit.git MyApp
 cd MyApp
 yarn install
 ```
