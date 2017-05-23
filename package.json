@@ -8,10 +8,10 @@
     "npm": ">=3.10.3"
   },
   "main": "gulpfile.js/index.js",
-  "homepage": "GIT REPO URL HERE",
+  "homepage": "https://github.com/SunSentinel/starterkit",
   "repository": {
     "type": "git",
-    "url": "GIT REPO URL HERE"
+    "url": "https://github.com/SunSentinel/starterkit.git"
   },
   "bin": {
     "blendid": "bin/blendid.js"
