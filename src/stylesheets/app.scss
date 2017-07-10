@@ -1,10 +1,17 @@
 @import 'normalize';
 @import 'bourbon';
 @import 'neat';
+//@import 'bootstrap/dist/css/bootstrap.min.css;
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+
 
 @import 'base/grid-settings';
 @import 'base/fonts';
 @import 'base/variables';
-@import 'base/typography';
 
-@import 'atoms/container';
+@import 'base/base';
+@import 'base/pull-quote';
+@import 'base/video';
+
+//@import 'base/typography';
+//@import 'atoms/container';

@@ -1,0 +1,35 @@
+aside.pull-quote {
+	margin: 0 0 4.8rem 4.8rem;
+	float:right;
+	font-family: $body-serif;
+
+	@include mobile {
+		margin: -1.618rem 0 1.618rem 0;
+	}
+}
+
+aside.pull-quote q {
+	font-size: 30px;
+	line-height: 38px;
+	position: relative;
+	width: 100%;
+	margin: 18px 0;
+	display: block;
+
+	&:before {
+		content: '\201c';
+		font: 90px/100% $body-serif;
+		color: #AD0000;
+		height: 50px;
+		display:block;
+	}
+}
+
+aside.pull-quote .quote-source {
+	color: #999;
+	font-family: $body-serif;
+	font-size: 14px;
+	line-height: 17px;
+	display: block;
+	margin: 15px 0 0 0;
+}

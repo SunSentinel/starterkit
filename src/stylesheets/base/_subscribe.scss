@@ -1,0 +1,20 @@
+.subscribeText {
+    width: 70%;
+    background-color: #F4F4F4;
+    padding: 2.0em 2em;
+
+}
+
+.subscribeText p {
+    margin: 0 auto !important;
+    font-size: 0.9rem !important;
+    line-height: 1.3rem !important;
+    font-family:$arial-stack !important;
+}
+
+.subscribeText p:first-of-type {
+    font-size: 1.2rem !important;
+    line-height: 2.0rem !important;
+    font-weight: bold;
+    font-style: italic;
+}

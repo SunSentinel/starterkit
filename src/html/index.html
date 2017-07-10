@@ -4,10 +4,90 @@
   Docs: https://mozilla.github.io/nunjucks/api.html
 #}
 
-{% extends 'layouts/application.html' %}
+{% extends 'layouts/base.html' %}
+
 
 {% block content %}
+{% include 'layouts/hidden_third_party_nav.html' %}
+
 <div id="container">
-	<h1>{{ headline }}</h1>
+{% include 'layouts/feature_topper.html' %}
+
+<article class="project">
+<div class="container">
+<p><span class="dropcap">L</span>orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.  </p>
+
+<p>Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.</p>
 </div>
+
+<div class="container">
+
+<div class="video">
+
+<div class="inform-embed" 
+ data-config-id= "1" 
+ data-pb="0" 
+ data-aspect-ratio= "16:9" 
+ data-width="100%" 
+ data-type="VideoPlayer/Single" 
+ data-tracking-group="91082" 
+ data-video-id="32654315"  
+ ></div> 
+ <script type="text/javascript"> var _informq = _informq || []; _informq.push(['embed']);</script> 
+
+</div>
+
+
+<div class="container">
+<h3>Subhead One</h3>
+
+<p>A slow-moving dike rehab that started in 2007, and includes adding a reinforcing wall, could take another decade to finish. Until then, draining remains the primary way to avoid flooding.</p>
+
+<p>Despite the harm to coasts from lake discharges, “we have to place more emphasis on our public safety concerns,” Army Corps spokesman John Campbell said.</p>
+
+
+<h3>Subhead Two</h3>
+   <p>South Florida’s rainier-than-usual winter, which triggered the ongoing lake draining and the temporary back pumping, has also prompted emergency pumping within the Everglades to save animals at risk of flooding.</p>
+   <p>The pumping moves more water out of Everglades sawgrass marshes in western Broward and Miami-Dade and into Everglades National Park to try to head off flooding that state officials warned could become a potential wildlife disaster.</p>
+   <p>Those marshes are part of 850,000 acres of the Everglades, extending into Palm Beach County, that are cordoned off by canals and levees to hold water that helps guard against flooding, supplement community drinking water supplies and also provide wildlife habitat.</p>
+   <p>But drainage to protect South Florida from flooding can also boost water levels too high in those marshes (called Everglades water conservation areas), threatening to wipe out deer, wading birds and other animals if high water lasts too long.</p>
+   <p>To alleviate that risk, emergency pumping in western Broward and Miami-Dade is expected to last until May.</p>
+
+
+<h3>Subhead Three</h3>
+
+  <p>This year, high water levels from Lake Okeechobee to the Everglades have cut off the lake from its usual drainage outlets to the south, which is another factor forcing more lake water to the east and west.</p>
+   <p>The Hillsboro, North New River and Miami canals are three of the main flood-control arteries stretching through South Florida, collecting water from Lake Okeechobee all the way to the coast in Palm Beach, Broward and Miami-Dade counties.</p>
+   </div>
+   <figure class="imageBlock wideBlock doubleBlock">
+  <img
+    class="js-lazy"
+    src="img/lazy-placeholder.jpg"
+    data-src="img/placeholder.jpg"
+  >
+
+  <img
+    class="js-lazy"
+    src="img/lazy-placeholder.jpg"
+    data-src="img/placeholder.jpg"
+  >
+  <figcaption class="caption">This is a caption.</figcaption>
+</figure>
+<div class="container">
+   <p>But when water levels rise across South Florida, the lake’s southern discharge gates to those canals are closed to prioritize moving potential flood waters away from farmland and cities that feed into the canals.</p>
+   <p>Most lake draining to the south was on hold from November through early March. Now some lake water is being moved south to a new reservoir in southwestern Palm Beach County.</p>
+
+<h3>Subhead Four</h3>
+
+  <p>The emergency pumping of more water out of Everglades preserves in western Broward and Miami-Dade and into Everglades National Park could offer valuable lessons for long-term efforts to save Florida’s famed River of Grass.</p>
+   <p>Environmentalists and state scientists alike are hopeful that boosting water flows into Everglades National Park will revive wildlife habitat that has suffered from draining South Florida to make way for farming and development.</p>
+   <p>But there are also concerns that the pumping, expected to last into May, could bring more water pollution that threatens dwindling Everglades habitat.</p>
+   <p>The results of this round of pumping could help planning for Everglades restoration projects that involve building reservoirs and treatment areas to eventually get more Lake Okeechobee water moving south, instead of dumping it out to sea.</p>
+</div>
+
+{% include 'layouts/footer.html' %}
+
+</article>
+</div>
+
 {% endblock %}

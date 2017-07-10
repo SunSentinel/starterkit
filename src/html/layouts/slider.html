@@ -1,0 +1,18 @@
+<aside class="slider">
+	<div class="swiper-container">
+			<div class="swiper-wrapper">
+					{% for photo in photos %}
+						<div class="swiper-slide">
+							<img
+								class="slider__img"
+								src="{{ photo.src }}"
+							>
+							<p class="slider__caption">{{ photo.caption }}</p>
+						</div>
+					{% endfor %}
+			</div>
+
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+	</div>
+</aside>

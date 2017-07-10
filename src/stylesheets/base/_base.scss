@@ -1,0 +1,1108 @@
+@charset "UTF-8";
+
+/*
+TABLE OF CONTENTS
+-----------------------
+
+I      CSS RESET
+II     PRINT STYLES
+III    TOPPER AND BYLINE
+IV    TEXT BLOCKS
+V     IMAGES
+VI    SIDE CONTENT
+VII   QUOTES
+VIII  NDN EMBEDS
+IX    YOUTUBE EMBEDS
+X     GRID CONTENT
+XI    SOCIAL
+XII   CREDITS
+XIII  ADS
+XIV RELATED CONTENT
+XV FOOTER
+
+*/
+
+/* =======================
+I. CSS RESET
+======================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* =======================
+II. PRINT STYLES
+======================= */
+
+html{
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #D80000;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #78171A;
+  text-decoration: none;
+}
+
+a:visited, a:focus, a:active{
+  text-decoration: none;
+}
+
+p {
+  color:#333;
+}
+
+.dropcap {
+    color:#000;
+    float:left;
+    font-size:7rem;
+    line-height:6rem;
+    margin:0 1.0rem 0 0;
+    padding-top:0
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #333;
+    font-family:$heading-serif;
+    font-weight: 500;
+}
+
+.bold {
+  font-weight:bold;}
+
+/* =======================
+III. STORY HEAD, BYLINES AND INTRO
+======================= */
+#topper {
+  position: relative;
+  text-align:center;
+  margin-top:50px; /*places lead img under navbar*/
+  img {
+    width: 100%;
+    margin-bottom: .3rem;
+  }
+}
+
+#topper h1 {
+  max-width:800px;
+  text-align:center;
+  font-size:3.5em;
+  line-height:110%;
+  font-weight:600;
+  margin:0 auto;
+    @include tablet{
+      font-size:3.5em;
+    }
+    @include mobile {
+      font-size:2.5em;
+    }
+}
+
+#topper h2 {
+  max-width:700px;
+  font-family:$heading-sans-serif;
+  font-size:1.5em;
+  line-height:110%;
+  color:#707070;
+  font-weight:600;
+  margin:1.0rem auto 2.0rem;
+    @include tablet{
+      font-size:1.4em;
+      margin: 0.5rem 3%;
+    }
+    @include mobile {
+        font-size:1.2em;
+    }
+}
+
+.topper--byline {
+    text-align:center;
+    color:#B1B1B1;
+    font-size:1em;
+    margin:10px auto;
+    p {
+        font-family:$heading-sans-serif;
+        font-size:18px;
+        line-height:150%;
+        font-weight:300;
+        color:#707070;
+            @media screen and (max-width: 530px){
+                font-size:16px;
+            }
+}
+    a {
+        color:#707070;
+          &:hover {
+            color:#E03333;
+          }
+    }
+}
+
+.topper--byline p:first-of-type {
+    @media screen and (max-width:600px){
+        margin-bottom:0;
+    }
+}
+
+.topper--byline p:last-of-type {
+  margin: 5px 0 10px;
+  font-size:0.9em;
+}
+
+.topper--visual {
+    position:relative;
+    margin:0 0 15px 0;
+
+    @media screen and (min-width:1025px){
+        max-height:600px;
+        overflow:hidden;
+    }
+}
+
+.topper--inner {
+    top:50%;
+    left:0;
+    right:0;
+    max-width:700px;
+    margin:0 auto;
+    font-family:$body-serif;
+
+        @media screen and (max-width:950px){
+            top:42%;
+        }
+
+        @media screen and (min-width:767px){
+            position:absolute;
+            h1{
+                color:#fff;
+                text-shadow:1px 1px 1px #333333;
+            }
+        }
+}
+
+.divider{
+  width:300px;
+  background:#333;
+  margin:5px auto;
+}
+
+/*==========================
+HEADER
+==========================*/
+
+.nav-holder {margin-bottom:50px;}
+
+.nav {
+  position:fixed;
+  z-index: 9999;
+  font-family: $heading-sans-serif;
+  top: 0;
+  text-align:left;
+  background: #252525;
+  color:#fff;
+  width:100%;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.nav .inner-nav {
+  margin: 0 auto 50px;
+  max-width: 1000px;
+  position: relative;
+}
+
+/*legacy site nav*/
+.nav .inner-nav .nav-bars:hover .nav-root {
+  display: block;
+  -webkit-animation: fade 0.2s linear;
+  animation: fade 0.2s linear;
+}
+
+.nav .inner-nav ul.nav-root {
+  display: none;
+  position: absolute;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  top: 34px;
+  padding-top: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font: 700 12px Arial,sans-serif;
+  width: auto;
+
+  @include mobile {
+    font-size: 11px;
+  }
+}
+
+.nav .inner-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav .nav-bars {
+  float: left;
+  font-size: 30px;
+  margin: 8px 10px 0 15px;
+  cursor: pointer;
+
+  @include mobile {
+    font-size: 25px;
+    margin: 10px 8px 0 15px;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: 20px;
+    margin: 13px 7px 0 15px;
+  }
+}
+
+.nav .logo {
+  height: 30px;
+  margin: 12px 10px 0 0;
+  float: left;
+  width:140px;
+  background-image:url("http://interactive.sun-sentinel.com/static/img/sunsentinel-logo-reversed.svg");
+  background-repeat: no-repeat;
+
+
+  @include mobile {
+    height: 20px;
+    margin: 16px 0 0 0;
+  }
+}
+
+.nav .inner-nav ul.nav-root li.nav-item {
+  background: #252525;
+  padding: 15px 24px 12px 15px;
+  cursor: pointer;
+  transition: background 0.2s linear;
+
+  &:hover {
+    background: #666666;
+  }
+}
+
+/*page specific nav*/
+.nav-label {
+  display: none;
+  float: right;
+  height: 50px;
+  padding: 15px 15px 0 15px;
+  font: 700 16px Arial,sans-serif;
+  cursor: pointer;
+
+  @include mobile {
+    padding: 16px 10px 0 15px;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: 12px;
+    padding: 18px 5px 0 0;
+  }
+
+  &:after {
+    content: '\f0d7';
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0 0px 0px 5px;
+    text-decoration:none;
+  }
+}
+
+.nav-links {
+  display: inline-block;
+  float: left;
+  height: 50px;
+  padding: 15px 15px 0 15px;
+  font: 700 16px Arial,sans-serif;
+
+  &:hover {
+    background-color: #666666;
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: 12px;
+  }
+}
+
+.nav-list li.active {
+    background-color: #666666 !important;
+}
+
+@media screen and (max-width: 999px) {
+  .nav-label {
+    display: inline-block;
+  }
+
+  .nav .inner-nav ul.nav-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 34px;
+    margin-top: 15px;
+    font: 600 15px/30px Georgia,serif;
+    width: 100%;
+
+    @include mobile {
+      font: 600 13px/20px Georgia,serif;
+    }
+  }
+
+  .nav-links {
+    width: 100%;
+    background-color: #252525;
+  }
+
+  .nav .nav-container:focus .nav-list {
+    background-color: #666666;
+  }
+
+  .nav .nav-container:active .nav-list {
+    background-color: #666666;
+  }
+
+}
+
+/* =======================
+IV. TEXT BLOCKS
+======================= */
+article.project .container {
+  font-family:$body-serif;
+  margin: 0 auto;
+  max-width: 1400px;
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+}
+
+section {
+    margin: 40px 0 10px;
+}
+
+section:first-of-type {
+    margin-top: 15px;
+}
+
+article.project .container {
+    p {
+      max-width: 600px;
+      font-size: 19px;
+      line-height: 1.618em;
+      font-family:$body-serif;
+      margin: 0 auto 1.6rem auto;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+    }
+
+    h3 {
+      font-size: 2.0rem;
+      line-height: 2.5rem;
+      max-width: 600px;
+      margin: 4.0rem auto 1.6rem auto;
+    }
+}
+
+/* =======================
+V. IMAGES
+======================= */
+.caption  {
+  font-family: $heading-sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  color: #797470;
+  @include mobile {
+    font-size:13px;
+    line-height:18px;
+  }
+}
+
+.imageBlock {
+  width: 100%;
+}
+
+.imageBlock img {
+  margin-bottom: .3rem;
+  width: 100%;
+}
+
+.wideBlock, .fullBlock {
+  margin: 1.0rem auto;
+}
+
+.fullBlock .caption {
+  padding: 0 2rem;
+}
+
+.doubleBlock img {
+  float: left;
+  margin-right: 2%;
+  width: 49%;
+}
+
+.doubleBlock img:last-of-type {
+  margin-right: 0;
+}
+
+@media (max-width: 740px) {
+  .doubleBlock img {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+    }
+  }
+
+figure a img:hover,
+a img:hover {
+    opacity: .8;
+    -moz-backface-visibility: hidden
+}
+
+.js-lazy {
+        -webkit-transition: opacity 500ms ease-in-out;
+           -moz-transition: opacity 500ms ease-in-out;
+             -o-transition: opacity 500ms ease-in-out;
+                transition: opacity 500ms ease-in-out;
+                 max-width: 100%;
+                   opacity: 0;
+}
+
+.js-lazy.b-loaded {
+    opacity: 1;
+}
+
+
+/* =======================
+VI. SIDE CONTENT
+======================= */
+.sideBlock {
+  max-width: 400px;
+  width: 100%;
+  font-family: $heading-sans-serif;
+}
+
+.inlineBlock {
+  max-width: 650px;
+  width: 100%;
+  margin: 1.0rem auto;
+  font-family: $heading-sans-serif;
+}
+
+
+.sideBlock > figcaption, .graphicBlock > figcaption {
+  font-family: $heading-sans-serif;
+  font-size: 15px;
+  line-height: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.sideBlock h4, .sideBlock h5, .sideBlock h6, .inlineBlock h4 {
+  font-size:24px;
+  font-weight: bold;
+  font-family: $heading-sans-serif;
+}
+
+.sideBlock img, .inlineBlock img {
+  margin: 0 0 .3rem 0;
+  width: 100%;
+}
+
+.rightBlock {
+  float: right;
+  margin: 0 0 2.8rem 4.8rem;
+}
+
+.leftBlock {
+  float: left;
+  margin: 0 4.8rem 4.8rem 0;
+}
+
+p.source {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #797470;
+  font-family: $heading-sans-serif;
+}
+
+@media (max-width: 740px) {
+  .rightBlock, .leftBlock {
+    float: none;
+    margin: 1.8rem auto 1.8rem;
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .graphicBlock {
+    max-width: 400px; }
+  }
+
+  .smallSide{
+  max-width:250px;
+  margin: 0 1.8rem 2.8rem 2.8rem;
+  @media screen and (max-width:850px){
+    margin:0 1.8rem 4.8rem 4.8rem;
+  }
+  @media screen and (max-width:740px){
+    margin:1.8rem;
+    float:right;
+  }
+  @media screen and (max-width:520px){
+    margin:1.8rem auto;
+    float:none;
+  }
+}
+
+
+/* =======================
+VII. QUOTES
+======================= */
+.smartquote{
+  padding:3px;
+    a{
+      color:#333;
+    }
+    i{
+      font-family: "FontAwesome";
+      text-align:center;
+      color: #4099ff;
+      margin-bottom:15px;
+      padding:15px 5px 5px 5px;
+      &:before{
+        content: '\f099'
+      }
+    }
+}
+
+.smartquote .quote-code{
+  font-family: "FontAwesome";
+  font-size:1em;
+  padding:0;
+  color:#55acee;
+  background-color:rgba(234, 209, 110,0);
+}
+
+.smartquote:hover{
+  background-color:rgb(234, 209, 110);
+  padding:3px;
+  cursor:pointer;
+}
+
+/* =======================
+VIII. NDN VIDEO EMBED
+======================= */
+.brightcove-embed { /* makes video responsive */
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin:1.618rem 0;
+}
+
+.BrightcoveExperience {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =======================
+IX. YOUTUBE VIDEO EMBED
+======================= */
+.videoBlock {
+  width: 100%;
+  max-width: 650px;
+  margin: 4.8rem auto;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe, .videoWrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =======================
+X. GRID CONTENT
+======================= */
+.gridWell {
+  margin: 2.8rem auto;
+  width: 95%;
+}
+
+.gridWell h5 {
+  font-family: $heading-sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.gridWell img {
+  margin-bottom: .3rem;
+  width: 100%;
+}
+
+.gridWell p {
+  font-family: $heading-sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.gridLayout {
+  float: left;
+  margin-right: 2%;
+}
+
+.gridLayout:last-child {
+  margin-right: 0;
+}
+
+.twoStack .gridLayout {
+  width: 49%;
+}
+
+.threeStack .gridLayout {
+  width: 32%;
+}
+
+.fourStack .gridLayout {
+  width: 23.5%;
+}
+
+@media (max-width: 740px) {
+  .gridWell {
+    border-bottom: 1px solid #CECDC6;
+    border-top: 1px solid #CECDC6;
+    padding: 1.0rem 0;
+  }
+
+  .gridWell img {
+    float: left;
+    margin-right: 1rem;
+    width: 50%;
+  }
+
+  .twoStack .gridLayout, .threeStack .gridLayout, .fourStack .gridLayout {
+    margin-bottom: 1.2rem;
+    float: none;
+    width: 100%;
+  }
+
+  .gridLayout:last-child {
+    margin-bottom: 0;
+    }
+  }
+
+/* =======================
+XI. SOCIAL
+======================= */
+.shareline{
+  display: inline-block;
+  text-align: center;
+  margin: 20px auto 0;
+  li{
+    float:left;
+  }
+  i{
+    cursor:pointer;
+    color: #fff;
+    font-size: 1.6em;
+    display: inline-block;
+    width: 1.6em;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:before {
+      font-family: "FontAwesome";
+    }
+    @include tablet{
+    color:#333;
+    }
+  }
+}
+
+ul.shareline li:nth-of-type(3) {
+  @include tablet{
+    display:none;
+  }
+}
+
+ul.shareline li i:hover {
+    -moz-backface-visibility: hidden
+}
+
+[data-share="facebook"] {
+    &:before {
+        content: '\f09a';
+    }
+    &:hover {
+        color: #23408F;
+    }
+}
+
+[data-share="twitter"] {
+    &:before{
+        content: '\f099';
+    }
+    &:hover{
+        color: #50ABDA;
+    }
+}
+
+[data-share="email"] {
+    &:before{
+        content: '\f0e0';
+    }
+    &:hover{
+        color: #999999;
+    }
+}
+
+.fb_comments {
+  box-sizing: border-box;
+  padding: 0 15px 30px;
+  margin: 30px auto 0 auto;
+  border-top: 5px solid #AD0000;
+  max-width: 800px;
+}
+
+/* =======================
+XII. CREDITS
+======================= */
+article.project .credits {
+  margin: 2rem auto;
+  max-width: 600px;
+  display: block;}
+
+article.project .credits p {
+  float: left;
+  width: auto;
+  display: block;
+  font-family: $heading-sans-serif;
+  font-size: 13px;
+  margin: 0 1rem 0 0;
+}
+
+article.project .credits a {
+  font-weight: bold;
+}
+
+/* =======================
+XIII. ADS
+======================= */
+
+.leaderboardAdvert{
+    display:block;
+    margin: 2.5rem auto;
+    text-align:center;
+
+    &:before {
+      color: #8A8A8A;
+      font-size: 10px;
+      line-height: 10px;
+      text-transform: uppercase;
+      display: block;
+      text-align: center;
+      content: "Advertisement";
+      position: relative;
+      top: -15px;
+    }
+
+    &--container {
+      width: 320px;
+      height: 50px;
+
+    @media screen and (min-width: 784px) {
+      width: 728px;
+      height: 90px;
+    }
+  }
+
+  &--dev {
+    background-color: #DCDCDC;
+  }
+}
+
+.cubeAdvert{
+    display:block;
+    margin-top: 10px;
+    text-align:left;
+
+    @media screen and (max-width: 740px) {
+      margin: 1.8rem auto;
+    }
+
+    @include mobile {
+      float: none;
+      margin: 0 auto;
+      max-width: 300px;
+      margin: 10px auto 30px;
+    }
+
+    &--container {
+      width: 300px;
+      height: 250px;
+
+      &:before {
+            color: #8A8A8A;
+            font-size: 10px;
+            line-height: 10px;
+            text-transform: uppercase;
+            display: block;
+            content: "Advertisement";
+            position: relative;
+            top: -15px;
+      }
+
+    }
+
+    &--dev {
+      background-color: #DCDCDC;
+    }
+}
+
+.shrinkycubeAdvert{
+    display:block;
+    margin-top: 10px;
+    text-align:left;
+
+    @include mobile {
+      float: none;
+      margin: 0 auto;
+      max-width: 300px;
+      margin: 10px auto 30px;
+    }
+
+    &--container {
+      width: 300px;
+      height: 250px;
+      @media screen and (max-width:784px){
+        width:320px;
+        height:50px;
+      }
+
+      &:before {
+            color: #8A8A8A;
+            font-size: 10px;
+            line-height: 10px;
+            text-transform: uppercase;
+            display: block;
+            content: "Advertisement";
+            position: relative;
+            top: -15px;
+            @media screen and (max-width:740px){
+            display:block;
+            text-align:center;
+            }
+      }
+
+    }
+
+    &--dev {
+      background-color: #DCDCDC;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .rightBlock .shrinkycubeAdvert {
+        margin: 2.5rem auto 1.8rem;
+    }
+}
+
+/* =======================
+XIV. RELATED CONTENT
+======================= */
+
+.related {
+  margin: 1em auto;
+  max-width: 900px;
+}
+
+.related h5, .related p, .related a {
+  font-family: $body-serif;}
+
+.related h5 {
+  font-size:1.4em;
+  font-family: $heading-sans-serif;
+  font-weight: bold;
+  margin-bottom: 1.0rem;}
+
+.related h6{
+  font-size:1.2em;
+  font-family: $heading-sans-serif;
+  font-weight: bold;
+}
+
+.related p {
+  font-size: 1.0em !important;
+  margin-top: 5px !important;
+  line-height: 1.2em !important;
+}
+
+.related a {
+  color: #333;
+  display: block;
+  float: left;
+  margin-right: 5%;
+  width: 30%;
+  cursor: pointer;
+}
+
+/*img size: 1920x1080px, 16:9 ratio*/
+.related a img {
+  margin-bottom: .3rem;
+  width: 100%;
+}
+
+.related a:hover {
+  text-decoration: none;}
+
+.related a:last-child {
+  margin-right: 0;}
+
+@media screen and (max-width: 600px) {
+  .related a {
+    float: none;
+    margin: 0 0 1.0rem;
+    width: 100%;
+  }
+
+  .related a img {
+    float: left;
+    width: 33%;
+  }
+
+  .related a h6, .related a p {
+    float: right;
+    width: 65%;
+  }
+  .related a h6 {
+    font-size:1.2em;
+    line-height:1.2em;
+  }
+}
+
+/* =======================
+XV. FOOTER
+======================= */
+
+.footer--content {
+  background-color: #252525;
+  text-align: center;
+  padding: 10px 0 20px 0;
+
+  a {
+    color: #fff;
+  }
+}
+
+.hide--mobile {
+  @include mobile {
+    display:none;
+  }
+}
+
+/*
+LOGO
+----------------------------------------------*/
+.footer--wrapper {
+  width: 100%;
+  height:80px;
+  background-color: #252525;
+  padding: 22px 0 0 0;
+  a {
+      margin: 0 auto;
+    }
+}
+
+.footer--logo {
+  display: block;
+  width: 195px;
+  height: 40px;
+  margin: 0 auto;
+  color: #fff;
+  background-repeat: no-repeat;
+  /*background-position: center-center;*/
+  background-image: url(http://interactive.sun-sentinel.com/static/img/sunsentinel-logo-reversed.svg);
+}
+
+.footer--content {
+  a {
+    margin-right: 10px;
+    @media screen and (max-width:510px) {
+      margin-right: 5px;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.footer--content a:first-of-type {
+  cursor: default;
+}
+

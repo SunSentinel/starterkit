@@ -1,4 +1,31 @@
 {
-	"title": "Interactive Starter Kit | Sun Sentinel",
-	"headline": "Hello World!"
+	"title": "Title goes here | Sun Sentinel",
+	"headline": "Headline goes here",
+	"description": "This is description",
+	"byline":"Reporter",
+	"social_title":"",
+	"social_url":"",
+	"social_image_url": "",
+	"fb_description": "",
+	"summary_large_image": "",
+	"twitter_description": "",
+	"omniture_section": "",
+	"omniture_project": "",
+	"ad_path": "", 
+
+    "series_name":"Series Name",
+    "link_1": "",
+    "subitem_1": "First Story",
+    "link_2": "",
+    "subitem_2": "Second Story",
+    "link_3": "",
+    "subitem_3": "Third Story",
+
+    "absolute_url": "http://www.sun-sentinel.com/",
+
+    "topper_img": "img/placeholder.jpg",
+    "intro_text": "This is description",
+    "reporter": "Reporter",
+    "pub_date": "8/30/2017"
+
 }

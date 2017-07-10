@@ -1,0 +1,31 @@
+.slider {
+	margin: 30px auto 0 auto;
+	font-size: 1em;
+}
+
+	.swiper-container {
+
+	}
+
+		.slider__img {
+			display: block;
+			width: 100%;
+		}
+
+		.slider__caption {
+			box-sizing: border-box;
+			padding: 0 10px;
+			margin-top: 5px;
+			font-family: $caption-font;
+			line-height: 140%;
+			color: #666;
+			font-size: 1.2em;
+
+			@include mq(tablet) {
+				font-size: 1.4em;
+			}
+
+			@include mq(desktop) {
+				padding: 0;
+			}
+		}

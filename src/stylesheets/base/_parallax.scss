@@ -1,0 +1,108 @@
+.image {
+	display: block;
+	font-size: 1em;
+
+	&--side {
+		@extend .image;
+		width: 100%;
+		margin: 20px auto 0 auto;
+
+		@media screen and (min-width: 570px) {
+			width: 450px;
+			float: right;
+			padding: 20px 0 15px 20px;
+		}
+	}
+
+	&--full {
+		@extend .image;
+		margin: 30px auto 0 auto;
+		max-width: 1200px;
+	}
+
+	&--bg {
+		@extend .image;
+		margin: 30px auto 0 auto;
+		max-width: 1440px;
+
+		@include mq(desktop) {
+			& .image__caption-and-file {
+				display: none;
+			}
+		}
+	}
+}
+
+	.image__bg {
+		display: none;
+		background-image: none;
+		height: 0;
+		padding-bottom: 56.25%;
+
+		@include mq(desktop) {
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+			display: block;
+		}
+	}
+
+	.image__caption-and-file {
+		display: block;
+		margin: 0;
+	}
+
+		.image__ratio-box {
+			position: relative;
+			display: block;
+			height: 0;
+			background-color: #EFEFEF;
+
+			&--16x9 {
+				@extend .image__ratio-box;
+				padding-bottom: 56.25%;
+			}
+
+			&:before {
+				content: 'Loading...';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 1.6em;
+				color: #666;
+
+				@include mq(tablet) {
+					font-size: 2em;
+				}
+			}
+
+			&.loaded {
+				padding: 0;
+				background-color: none;
+				height: auto;
+
+				&:before {
+					content: '';
+				}
+			}
+		}
+
+			.image__file {
+				display: block;
+				width: 100%;
+			}
+
+		.image__caption {
+			max-width: 700px;
+			font-family: $caption-font;
+			color: #666;
+			font-size: 1.2em;
+			line-height: 140%;
+			margin-top: 5px;
+			padding: 0 10px;
+
+			@include mq(tablet) {
+				font-size: 1.4em;
+			}
+		}

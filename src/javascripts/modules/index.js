@@ -1,11 +1,18 @@
-import $ from 'jquery';
-import * as d3 from 'd3';
-import * as topojson from 'topojson';
-import pym from 'pym.js'
+import * as bootstrap from 'bootstrap';
+import loadComments from './comments.js';
+import doNavigation from './nav.js';
+import doLazyLoad from './photos.js';
+import doQuoteReveal from './quotes.js';
+
+
+doLazyLoad();
+doQuoteReveal();
+loadComments();
+doNavigation();
 
 /*
   Check loaded libraries
-*/
+
 const loadExample = () => {
   console.log(`
     jQuery: ${$},
@@ -15,7 +22,8 @@ const loadExample = () => {
   `);
 }
 export { loadExample };
-
+*/
+ 
 /*
   Automatically instantiates modules based on data-attributes
   specifying module file-names.
