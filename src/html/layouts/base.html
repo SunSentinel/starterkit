@@ -38,6 +38,8 @@
 
 		{% block stylesheet %}
 		<link rel="icon" type="image/ico" href="favicon.ico">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="stylesheets/app.css">
         <script type="text/javascript" src="//launch.newsinc.com/js/embed.js"></script>
 		{% endblock %}
@@ -63,7 +65,7 @@
 			});
 		</script>
 		{% endblock omniture %}
-		
+
 	</head>
 
 	<body data-ad-path="/4011/trb.sunsentinel/{% if ad_path %}{{ ad_path}}{% else %}news{% endif %}" data-ad-ptype="sf" data-ad-iframe-url="ad-iframe.html">
@@ -76,9 +78,9 @@
 	</body>
 
 	{% block javascript %}
-<!--<script src="https://code.jquery.com/jquery-1.11.3.js"></script>-->
-	  <script src="javascripts/app.js"></script>
 		<script type="text/javascript" src="//cdn.gigya.com/js/gigya.js?apiKey=2_UtI1tkvSb0o7fJvh22ub59QFt86uh2nTUw_6vZ9Az-gwt9GERmEMJyT0ROaXY9GK"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	  <script src="javascripts/app.js"></script>
 	{% endblock javascript %}
 
 	{% block script %}
