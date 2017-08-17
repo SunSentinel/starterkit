@@ -1,14 +1,23 @@
-<aside class="image--bg">
-	<figure class="image__bg" style="background-image:url( {{ bg }} );"></figure>
+{% macro input(bg, img, caption) %}
 
-	<figure class="image__caption-and-file">
-		<div class="image__ratio-box--16x9">
+</div>
+
+<aside class="parallax--bg">
+	<figure class="parallax__bg" style="background-image:url( {{ bg }} );"></figure>
+
+	<figure class="parallax__caption-and-file">
+		<div class="parallax__ratio-box--16x9">
 			<img
-				class="image__file js-lazy"
-				src="static/img/lazy-placeholder.jpg"
-				data-src="{{ data_src }}"
+				class="parallax__file"
+				src="{{ img }}"
 			>
 		</div>
-		<figcaption class="image__caption">{{ caption }}</figcaption>
 	</figure>
+
+	<figcaption class="caption">{{ caption }}</figcaption>
+
 </aside>
+
+<div class="container">
+
+{% endmacro %}

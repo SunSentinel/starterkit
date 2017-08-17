@@ -1,31 +1,41 @@
 {
-	"title": "Title goes here | Sun Sentinel",
-	"headline": "Headline goes here",
-	"description": "This is description",
-	"byline":"Reporter",
-	"social_title":"",
-	"social_url":"",
-	"social_image_url": "",
-	"fb_description": "",
-	"summary_large_image": "",
-	"twitter_description": "",
-	"omniture_section": "",
-	"omniture_project": "",
-	"ad_path": "", 
+  "title": "Title goes here | Sun Sentinel",
+  "headline": "Headline goes here",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
 
-    "series_name":"Series Name",
-    "link_1": "",
-    "subitem_1": "First Story",
-    "link_2": "",
-    "subitem_2": "Second Story",
-    "link_3": "",
-    "subitem_3": "Third Story",
+  "social_title": "This is your title",
+  "social_url": "Insert absolute url but with http",
+  "social_image_url": "images/fb.jpg",
+  "fb_description": "This is a Facebook description. This is a Facebook description. This is a Facebook description.",
+  "twitter_description": "This is a Twitter description. This is a Twitter description. This is a Twitter description.",
 
-    "absolute_url": "http://www.sun-sentinel.com/",
+  "omniture_section": "news",
+  "omniture_project": "test",
+  "ad_path": "news",
 
-    "topper_img": "img/placeholder.jpg",
-    "intro_text": "This is description",
-    "reporter": "Reporter",
-    "pub_date": "8/30/2017"
+  "series_name": "Series Name",
+  "link_1": "#",
+  "subitem_1": "First Story",
+  "link_2": "#",
+  "subitem_2": "Second Story",
+  "link_3": "#",
+  "subitem_3": "Third Story",
 
+  "absolute_url": "interactive.sun-sentinel.com/test",
+
+  "topper_img": "http://projects.sun-sentinel.com/projects/test/static/img/header.jpg",
+  "intro_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+
+  "reporters": [{
+      "name": "Name Here",
+      "url": "#",
+      "operator": "and "
+    },
+    {
+      "name": "Name Here",
+      "url": "#",
+      "operator": ""
+    }
+  ],
+  "pub_date": "Jan. 1, 1910"
 }

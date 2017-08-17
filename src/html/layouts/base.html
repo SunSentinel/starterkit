@@ -1,4 +1,3 @@
-{% from 'macros/helpers.html' import sprite %}
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -41,7 +40,6 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="stylesheets/app.css">
-        <script type="text/javascript" src="//launch.newsinc.com/js/embed.js"></script>
 		{% endblock %}
 
 
@@ -85,10 +83,14 @@
 
 	{% block script %}
 	{% endblock %}
-<!--
-	{% if not DEBUG %}
+
+	<!-- UNCOMMENT FOR BRIGHTCOVE VIDEO
+	<script language='JavaScript' type='text/javascript' src='https://sadmin.brightcove.com/js/BrightcoveExperiences.js'></script>
+	<script type='text/javascript'>brightcove.createExperiences();</script> -->
+
+	<!-- {% if not DEBUG %} -->
 		<script src="http://s3.amazonaws.com/media.apps.chicagotribune.com/ads/v2.1.4/ads.min.js"></script>
-	{% endif %}-->
+	<!-- {% endif %} -->
 
 	{% block ads %}
 	<script type='text/javascript'>

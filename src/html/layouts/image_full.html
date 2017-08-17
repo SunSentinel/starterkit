@@ -1,12 +1,12 @@
-</div>
+{% macro input(img, caption) %}
 
 <figure class="fullBlock imageBlock">
 	<img
 		class="js-lazy"
- 		src="static/img/lazy-placeholder.jpg"
- 		data-src="{{ data_src }}"
+ 		src="images/lazy-placeholder.jpg"
+ 		data-src="{{ img }}"
  	>
 	<figcaption class="caption">{{ caption }}</figcaption>
 </figure>
 
-<div class="container">
+{% endmacro %}

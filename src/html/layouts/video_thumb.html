@@ -1,7 +1,11 @@
+{% macro input(link, img) %}
+
 <aside class="video-thumb">
 	<figure class="video__figure">
 		<a class="video-thumb__link" href="{{ link }}" target="_blank">
-			<img class="video-thumb__image" src="{{ thumb_src }}" alt="{{ alt }}">
+			<img class="video-thumb__image" src="{{ img }}" alt="{{ alt }}">
 		</a>
 	</figure>
 </aside>
+
+{% endmacro %}
