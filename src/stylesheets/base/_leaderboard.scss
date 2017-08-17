@@ -1,22 +1,22 @@
 .advert {
-	display: block;
-	margin: 30px auto 0 auto;
-	
-	&--leaderboard {
-		width: 320px;
-		height: 50px;
-		
-		@media screen and (min-width: 784px) {
-			width: 728px;
-			height: 90px;
-		}
-	}
-	
-	&--dev {
-		background-color: #DCDCDC;
-	}
-	
-	.article > &--leaderboard:first-of-type {
-		margin-top: 0;
-	}
+  display: block;
+  margin: 30px auto 0;
+
+  &--leaderboard {
+  height: 50px;
+  width: 320px;
+
+  @media screen and (min-width: 784px) {
+  height: 90px;
+  width: 728px;
+  }
+  }
+
+  &--dev {
+  background-color: $ad;
+  }
+
+  .article > &--leaderboard:first-of-type {
+  margin-top: 0;
+  }
 }

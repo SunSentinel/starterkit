@@ -1,30 +1,8 @@
 @charset "UTF-8";
 
-/*
-TABLE OF CONTENTS
------------------------
-
-I      CSS RESET
-II     PRINT STYLES
-III    TOPPER AND BYLINE
-IV    TEXT BLOCKS
-V     IMAGES
-VI    SIDE CONTENT
-VII   QUOTES
-VIII  NDN EMBEDS
-IX    YOUTUBE EMBEDS
-X     GRID CONTENT
-XI    SOCIAL
-XII   CREDITS
-XIII  ADS
-XIV RELATED CONTENT
-XV FOOTER
-
-*/
-
-/* =======================
-I. CSS RESET
-======================= */
+// =======================
+// CSS RESET
+// =======================
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -38,42 +16,46 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol, ul {
   list-style: none;
 }
+
 blockquote, q {
   quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* =======================
-II. PRINT STYLES
-======================= */
-
-html{
+// =======================
+// PRINT STYLES
+// =======================
+html {
   -webkit-font-smoothing: antialiased;
 }
 
@@ -83,201 +65,221 @@ html{
 }
 
 a {
-  color: #D80000;
+  color: $ss-red;
   text-decoration: none;
 }
 
-a:hover{
-  color: #78171A;
+a:hover {
+  color: $ss-darkred;
   text-decoration: none;
 }
 
-a:visited, a:focus, a:active{
+a:active,
+a:focus,
+a:visited {
   text-decoration: none;
 }
 
 p {
-  color:#333;
+  color: $text;
 }
 
 .dropcap {
-    color:#000;
-    float:left;
-    font-size:7rem;
-    line-height:6rem;
-    margin:0 1.0rem 0 0;
-    padding-top:0
+  color: $black;
+  float: left;
+  font-size: 7rem;
+  line-height: 6rem;
+  margin: 0 1rem 0 0;
+  padding-top: 0;
 }
 
-h1, h2, h3, h4, h5, h6{
-    color: #333;
-    font-family:$heading-serif;
-    font-weight: 500;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text;
+  font-family: $heading-serif;
+  font-weight: 500;
 }
 
 .bold {
-  font-weight:bold;}
+  font-weight: 600;
+}
 
-/* =======================
-III. STORY HEAD, BYLINES AND INTRO
-======================= */
+// =======================
+// STORY HEAD, BYLINES AND INTRO
+// =======================
 #topper {
+  margin-top: 50px;
+  margin-bottom: 50px;
   position: relative;
-  text-align:center;
-  margin-top:50px; /*places lead img under navbar*/
-  img {
-    width: 100%;
-    margin-bottom: .3rem;
-  }
+  text-align: center;
 }
 
 #topper h1 {
-  max-width:800px;
-  text-align:center;
-  font-size:3.5em;
-  line-height:110%;
-  font-weight:600;
-  margin:0 auto;
-    @include tablet{
-      font-size:3.5em;
-    }
-    @include mobile {
-      font-size:2.5em;
-    }
+  font-size: 3.5em;
+  font-weight: 600;
+  line-height: 110%;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+
+  @include tablet {
+    font-size: 2.5em;
+  }
+
+  @include mobile {
+    font-size: 1.8em;
+  }
 }
 
 #topper h2 {
-  max-width:700px;
-  font-family:$heading-sans-serif;
-  font-size:1.5em;
-  line-height:110%;
-  color:#707070;
-  font-weight:600;
-  margin:1.0rem auto 2.0rem;
-    @include tablet{
-      font-size:1.4em;
-      margin: 0.5rem 3%;
-    }
-    @include mobile {
-        font-size:1.2em;
-    }
-}
+  color: $text;
+  font-family: $body-serif;
+  font-size: 1.5em;
+  line-height: 110%;
+  margin: 1rem auto 2rem;
+  max-width: 700px;
 
-.topper--byline {
-    text-align:center;
-    color:#B1B1B1;
-    font-size:1em;
-    margin:10px auto;
-    p {
-        font-family:$heading-sans-serif;
-        font-size:18px;
-        line-height:150%;
-        font-weight:300;
-        color:#707070;
-            @media screen and (max-width: 530px){
-                font-size:16px;
-            }
-}
-    a {
-        color:#707070;
-          &:hover {
-            color:#E03333;
-          }
-    }
-}
+  @include tablet {
+    font-size: 1.4em;
+    margin: .5rem 3%;
+  }
 
-.topper--byline p:first-of-type {
-    @media screen and (max-width:600px){
-        margin-bottom:0;
-    }
-}
-
-.topper--byline p:last-of-type {
-  margin: 5px 0 10px;
-  font-size:0.9em;
+  @include mobile {
+    font-size: 1.1em;
+  }
 }
 
 .topper--visual {
-    position:relative;
-    margin:0 0 15px 0;
+  margin: 0 0 15px;
+  position: relative;
 
-    @media screen and (min-width:1025px){
-        max-height:600px;
-        overflow:hidden;
-    }
+  @media screen and (min-width:1025px) {
+    max-height: 600px;
+    overflow: hidden;
+  }
+
+  img {
+    margin-bottom: .3rem;
+    width: 100%;
+  }
 }
 
 .topper--inner {
-    top:50%;
-    left:0;
-    right:0;
-    max-width:700px;
-    margin:0 auto;
-    font-family:$body-serif;
+  font-family: $body-serif;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 700px;
+  left: 0;
+  right: 0;
+  top: 50%;
 
-        @media screen and (max-width:950px){
-            top:42%;
-        }
+  @media screen and (max-width:950px) {
+    top: 42%;
+  }
 
-        @media screen and (min-width:767px){
-            position:absolute;
-            h1{
-                color:#fff;
-                text-shadow:1px 1px 1px #333333;
-            }
-        }
+  @media screen and (min-width:767px) {
+    position: absolute;
+
+    h1 {
+      color: $white;
+      text-shadow: 1px 1px 1px $text;
+    }
+  }
 }
 
-.divider{
-  width:300px;
-  background:#333;
-  margin:5px auto;
+.topper--byline {
+  color: $gray;
+  font-size: 1em;
+
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  p {
+    color: $text;
+    font-family: $body-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 150%;
+
+    @media screen and (max-width: 530px) {
+      font-size: 16px;
+    }
+  }
+
+  a {
+    color: $ss-red;
+
+    &:hover {
+      color: $ss-darkred;
+    }
+  }
 }
 
-/*==========================
-HEADER
-==========================*/
+.topper--byline p:first-of-type {
+  @media screen and (max-width:600px) {
+    margin-bottom: 0;
+  }
+}
 
-.nav-holder {margin-bottom:50px;}
-
-.nav {
-  position:fixed;
-  z-index: 9999;
+.topper--byline p:last-of-type {
   font-family: $heading-sans-serif;
-  top: 0;
-  text-align:left;
-  background: #252525;
-  color:#fff;
-  width:100%;
-  height: 50px;
+  font-size: .8em;
+  margin: 5px 0 10px;
+  text-transform: uppercase;
+}
+
+// ==========================
+// HEADER
+// ==========================
+.nav-holder {
   margin-bottom: 50px;
 }
 
-.nav .inner-nav {
-  margin: 0 auto 50px;
-  max-width: 1000px;
-  position: relative;
+.nav {
+  background: $charcoal;
+  color: $white;
+  font-family: $heading-sans-serif;
+  text-align: left;
+  position: fixed;
+  margin-bottom: 50px;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 9999;
+
+  .inner-nav {
+    margin: 0 auto 50px;
+    max-width: 1000px;
+    position: relative;
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
 }
 
-/*legacy site nav*/
+// legacy site nav
 .nav .inner-nav .nav-bars:hover .nav-root {
+  animation: fade .2s linear;
   display: block;
-  -webkit-animation: fade 0.2s linear;
-  animation: fade 0.2s linear;
 }
 
 .nav .inner-nav ul.nav-root {
   display: none;
-  position: absolute;
+  font: 600 12px $heading-sans-serif;
   left: 0;
   list-style: none;
-  padding: 0;
   margin: 0;
-  top: 34px;
-  padding-top: 16px;
+  padding: 16px 0 0;
+  position: absolute;
   text-transform: uppercase;
-  font-weight: bold;
-  font: 700 12px Arial,sans-serif;
+  top: 34px;
   width: auto;
 
   @include mobile {
@@ -285,16 +287,11 @@ HEADER
   }
 }
 
-.nav .inner-nav a {
-  color: #fff;
-  text-decoration: none;
-}
-
 .nav .nav-bars {
+  cursor: pointer;
   float: left;
   font-size: 30px;
   margin: 8px 10px 0 15px;
-  cursor: pointer;
 
   @include mobile {
     font-size: 25px;
@@ -308,43 +305,42 @@ HEADER
 }
 
 .nav .logo {
+  background-image: url('http://interactive.sun-sentinel.com/static/img/sunsentinel-logo-reversed.svg');
+  background-repeat: no-repeat;
+  float: left;
   height: 30px;
   margin: 12px 10px 0 0;
-  float: left;
-  width:140px;
-  background-image:url("http://interactive.sun-sentinel.com/static/img/sunsentinel-logo-reversed.svg");
-  background-repeat: no-repeat;
-
+  width: 140px;
 
   @include mobile {
     height: 20px;
-    margin: 16px 0 0 0;
+    margin: 16px 0 0;
   }
 }
 
 .nav .inner-nav ul.nav-root li.nav-item {
-  background: #252525;
-  padding: 15px 24px 12px 15px;
+  background: $charcoal;
   cursor: pointer;
-  transition: background 0.2s linear;
+  padding: 15px 24px 12px 15px;
+  transition: background .2s linear;
 
   &:hover {
-    background: #666666;
+    background: $gray;
   }
 }
 
-/*page specific nav*/
+// page specific nav
 .nav-label {
+  cursor: pointer;
   display: none;
   float: right;
+  font: 700 16px $heading-sans-serif;
   height: 50px;
-  padding: 15px 15px 0 15px;
-  font: 700 16px Arial,sans-serif;
-  cursor: pointer;
+  padding: 15px 15px 0;
 
   @include mobile {
-    padding: 16px 10px 0 15px;
     font-size: 14px;
+    padding: 16px 10px 0 15px;
   }
 
   @media screen and (max-width: 350px) {
@@ -355,35 +351,30 @@ HEADER
   &:after {
     content: '\f0d7';
     font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    margin: 0 0px 0px 5px;
-    text-decoration:none;
+    margin: 0 0 0 5px;
   }
 }
 
 .nav-links {
   display: inline-block;
   float: left;
+  font: 700 16px $heading-sans-serif;
   height: 50px;
-  padding: 15px 15px 0 15px;
-  font: 700 16px Arial,sans-serif;
+  padding: 15px 15px 0;
 
   &:hover {
-    background-color: #666666;
+    background-color: $gray;
   }
-
   @include mobile {
     font-size: 14px;
   }
-
   @media screen and (max-width: 350px) {
     font-size: 12px;
   }
 }
 
 .nav-list li.active {
-    background-color: #666666 !important;
+  background-color: $gray;
 }
 
 @media screen and (max-width: 999px) {
@@ -393,41 +384,39 @@ HEADER
 
   .nav .inner-nav ul.nav-list {
     display: none;
+    font: 600 15px / 30px $body-serif;
+    list-style: none;
+    margin: 15px 0 0;
+    padding: 0;
     position: absolute;
     right: 0;
-    list-style: none;
-    padding: 0;
-    margin: 0;
     top: 34px;
-    margin-top: 15px;
-    font: 600 15px/30px Georgia,serif;
     width: 100%;
 
     @include mobile {
-      font: 600 13px/20px Georgia,serif;
+      font: 600 13px / 20px $body-serif;
     }
   }
 
   .nav-links {
+    background-color: $charcoal;
     width: 100%;
-    background-color: #252525;
   }
 
   .nav .nav-container:focus .nav-list {
-    background-color: #666666;
+    background-color: $gray;
   }
 
   .nav .nav-container:active .nav-list {
-    background-color: #666666;
+    background-color: $gray;
   }
-
 }
 
-/* =======================
-IV. TEXT BLOCKS
-======================= */
+// =======================
+// TEXT BLOCKS
+// =======================
 article.project .container {
-  font-family:$body-serif;
+  font-family: $body-serif;
   margin: 0 auto;
   max-width: 1400px;
   overflow: hidden;
@@ -436,44 +425,51 @@ article.project .container {
 }
 
 section {
-    margin: 40px 0 10px;
+  margin: 40px 0 10px;
 }
 
 section:first-of-type {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 article.project .container {
-    p {
-      max-width: 600px;
-      font-size: 19px;
-      line-height: 1.618em;
-      font-family:$body-serif;
-      margin: 0 auto 1.6rem auto;
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-    }
+  p {
+    font-family: $body-serif;
+    font-size: 19px;
+    line-height: 1.618em;
+    margin: 0 auto 1.6rem;
+    max-width: 600px;
 
-    h3 {
-      font-size: 2.0rem;
-      line-height: 2.5rem;
-      max-width: 600px;
-      margin: 4.0rem auto 1.6rem auto;
+    &:last-of-type {
+      margin-bottom: 0;
     }
+  }
+
+  h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin: 4rem auto 1.6rem;
+    max-width: 600px;
+  }
 }
 
-/* =======================
-V. IMAGES
-======================= */
-.caption  {
+// =======================
+// IMAGES
+// =======================
+.caption {
+  color: $gray;
   font-family: $heading-sans-serif;
   font-size: 15px;
   line-height: 20px;
-  color: #797470;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  padding: 0 0 1em;
+  width: 100%;
+
   @include mobile {
-    font-size:13px;
-    line-height:18px;
+    font-size: 13px;
+    line-height: 18px;
   }
 }
 
@@ -486,12 +482,17 @@ V. IMAGES
   width: 100%;
 }
 
-.wideBlock, .fullBlock {
-  margin: 1.0rem auto;
+.fullBlock,
+.wideBlock {
+  margin: 1rem auto;
 }
 
 .fullBlock .caption {
   padding: 0 2rem;
+
+  @include mobile {
+    padding: 0 1em 1em;
+  }
 }
 
 .doubleBlock img {
@@ -509,67 +510,67 @@ V. IMAGES
     float: none;
     margin-right: 0;
     width: 100%;
-    }
   }
+}
 
-figure a img:hover,
-a img:hover {
-    opacity: .8;
-    -moz-backface-visibility: hidden
+a img:hover,
+figure a img:hover {
+  backface-visibility: hidden;
+  opacity: .8;
 }
 
 .js-lazy {
-        -webkit-transition: opacity 500ms ease-in-out;
-           -moz-transition: opacity 500ms ease-in-out;
-             -o-transition: opacity 500ms ease-in-out;
-                transition: opacity 500ms ease-in-out;
-                 max-width: 100%;
-                   opacity: 0;
+  max-width: 100%;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
 
 .js-lazy.b-loaded {
-    opacity: 1;
+  opacity: 1;
 }
 
-
-/* =======================
-VI. SIDE CONTENT
-======================= */
+// =======================
+// SIDE CONTENT
+// =======================
 .sideBlock {
+  font-family: $heading-sans-serif;
   max-width: 400px;
   width: 100%;
-  font-family: $heading-sans-serif;
 }
 
 .inlineBlock {
+  font-family: $heading-sans-serif;
+  margin: 1rem auto;
   max-width: 650px;
   width: 100%;
-  margin: 1.0rem auto;
-  font-family: $heading-sans-serif;
 }
 
-
-.sideBlock > figcaption, .graphicBlock > figcaption {
+.graphicBlock > figcaption,
+.sideBlock > figcaption {
   font-family: $heading-sans-serif;
   font-size: 15px;
   line-height: 1.2rem;
   margin-bottom: 10px;
 }
 
-.sideBlock h4, .sideBlock h5, .sideBlock h6, .inlineBlock h4 {
-  font-size:24px;
-  font-weight: bold;
+.inlineBlock h4,
+.sideBlock h4,
+.sideBlock h5,
+.sideBlock h6 {
   font-family: $heading-sans-serif;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-.sideBlock img, .inlineBlock img {
-  margin: 0 0 .3rem 0;
+.inlineBlock img,
+.sideBlock img {
+  margin: 0 0 .3rem;
   width: 100%;
 }
 
 .rightBlock {
   float: right;
-  margin: 0 0 3.0rem 3.0rem;
+  margin: 0 0 3rem 3rem;
 }
 
 .leftBlock {
@@ -578,83 +579,54 @@ VI. SIDE CONTENT
 }
 
 p.source {
+  color: $gray;
+  font-family: $heading-sans-serif;
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: #797470;
-  font-family: $heading-sans-serif;
 }
 
 @media (max-width: 740px) {
-  .rightBlock, .leftBlock {
+  .leftBlock,
+  .rightBlock {
     float: none;
-    margin: 1.8rem auto 1.8rem;
-    width: 100%;
+    margin: 1.8rem auto;
     max-width: 650px;
+    width: 100%;
   }
 
   .graphicBlock {
-    max-width: 400px; }
+    max-width: 400px;
   }
+}
 
-  .smallSide{
-  max-width:250px;
+.smallSide {
   margin: 0 1.8rem 2.8rem 2.8rem;
-  @media screen and (max-width:850px){
-    margin:0 1.8rem 4.8rem 4.8rem;
+  max-width: 250px;
+
+  @media screen and (max-width:850px) {
+    margin: 0 1.8rem 4.8rem 4.8rem;
   }
-  @media screen and (max-width:740px){
-    margin:1.8rem;
-    float:right;
+
+  @media screen and (max-width:740px) {
+    float: right;
+    margin: 1.8rem;
   }
-  @media screen and (max-width:520px){
-    margin:1.8rem auto;
-    float:none;
+
+  @media screen and (max-width:520px) {
+    float: none;
+    margin: 1.8rem auto;
   }
 }
 
-
-/* =======================
-VII. QUOTES
-======================= */
-.smartquote{
-  padding:3px;
-    a{
-      color:#333;
-    }
-    i{
-      font-family: "FontAwesome";
-      text-align:center;
-      color: #4099ff;
-      margin-bottom:15px;
-      padding:15px 5px 5px 5px;
-      &:before{
-        content: '\f099'
-      }
-    }
-}
-
-.smartquote .quote-code{
-  font-family: "FontAwesome";
-  font-size:1em;
-  padding:0;
-  color:#55acee;
-  background-color:rgba(234, 209, 110,0);
-}
-
-.smartquote:hover{
-  background-color:rgb(234, 209, 110);
-  padding:3px;
-  cursor:pointer;
-}
-
-/* =======================
-VIII. NDN VIDEO EMBED
-======================= */
-.brightcove-embed { /* makes video responsive */
-  position: relative;
+// =======================
+// NDN VIDEO EMBED
+// =======================
+.brightcove-embed {
+  // makes video responsive
   height: 0;
+  margin: 1.618rem 0;
   padding-bottom: 56.25%;
-  margin:1.618rem 0;
+  position: relative;
 }
 
 .BrightcoveExperience {
@@ -665,23 +637,24 @@ VIII. NDN VIDEO EMBED
   height: 100%;
 }
 
-/* =======================
-IX. YOUTUBE VIDEO EMBED
-======================= */
+// =======================
+// YOUTUBE VIDEO EMBED
+// =======================
 .videoBlock {
-  width: 100%;
+  margin: 3rem auto;
   max-width: 650px;
-  margin: 4.8rem auto;
+  width: 100%;
 }
 
 .videoWrapper {
-  position: relative;
+  height: 0;
   padding-bottom: 56.25%;
   padding-top: 25px;
-  height: 0;
+  position: relative;
 }
 
-.videoWrapper iframe, .videoWrapper embed {
+.videoWrapper embed,
+.videoWrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -689,29 +662,29 @@ IX. YOUTUBE VIDEO EMBED
   height: 100%;
 }
 
-/* =======================
-X. GRID CONTENT
-======================= */
+// =======================
+// GRID CONTENT
+// =======================
 .gridWell {
   margin: 2.8rem auto;
   width: 95%;
-}
 
-.gridWell h5 {
-  font-family: $heading-sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-}
+  h5 {
+    font-family: $heading-sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+  }
 
-.gridWell img {
-  margin-bottom: .3rem;
-  width: 100%;
-}
+  img {
+    margin-bottom: .3rem;
+    width: 100%;
+  }
 
-.gridWell p {
-  font-family: $heading-sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
+  p {
+    font-family: $heading-sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
 }
 
 .gridLayout {
@@ -737,299 +710,310 @@ X. GRID CONTENT
 
 @media (max-width: 740px) {
   .gridWell {
-    border-bottom: 1px solid #CECDC6;
-    border-top: 1px solid #CECDC6;
-    padding: 1.0rem 0;
+    border-bottom: 1px solid $grid-border;
+    border-top: 1px solid $grid-border;
+    padding: 1rem 0;
+
+    img {
+      float: left;
+      margin-right: 1rem;
+      width: 50%;
+    }
   }
 
-  .gridWell img {
-    float: left;
-    margin-right: 1rem;
-    width: 50%;
-  }
-
-  .twoStack .gridLayout, .threeStack .gridLayout, .fourStack .gridLayout {
-    margin-bottom: 1.2rem;
+  .fourStack .gridLayout,
+  .threeStack .gridLayout,
+  .twoStack .gridLayout {
     float: none;
+    margin-bottom: 1.2rem;
     width: 100%;
   }
 
   .gridLayout:last-child {
     margin-bottom: 0;
-    }
+  }
+}
+
+// =======================
+// SOCIAL
+// =======================
+.shareline {
+  display: inline-block;
+  margin: 20px auto 0;
+  text-align: center;
+
+  li {
+    float: left;
   }
 
-/* =======================
-XI. SOCIAL
-======================= */
-.shareline{
-  display: inline-block;
-  text-align: center;
-  margin: 20px auto 0;
-  li{
-    float:left;
-  }
-  i{
-    cursor:pointer;
-    color: #fff;
-    font-size: 1.6em;
+  i {
+    color: $white;
+    cursor: pointer;
     display: inline-block;
-    width: 1.6em;
+    font-size: 1.6em;
     line-height: 1.5em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    width: 1.6em;
+
     &:before {
-      font-family: "FontAwesome";
+      font-family: 'FontAwesome';
     }
-    @include tablet{
-    color:#333;
+
+    @include tablet {
+      color: $text;
     }
   }
 }
 
 ul.shareline li:nth-of-type(3) {
-  @include tablet{
-    display:none;
+  @include tablet {
+    display: none;
   }
 }
 
 ul.shareline li i:hover {
-    -moz-backface-visibility: hidden
+  backface-visibility: hidden;
 }
 
 [data-share="facebook"] {
-    &:before {
-        content: '\f09a';
-    }
-    &:hover {
-        color: #23408F;
-    }
+  &:before {
+    content: '\f09a';
+  }
+
+  &:hover {
+    color: $facebook;
+  }
 }
 
 [data-share="twitter"] {
-    &:before{
-        content: '\f099';
-    }
-    &:hover{
-        color: #50ABDA;
-    }
+  &:before {
+    content: '\f099';
+  }
+
+  &:hover {
+    color: $twitter;
+  }
 }
 
 [data-share="email"] {
-    &:before{
-        content: '\f0e0';
-    }
-    &:hover{
-        color: #999999;
-    }
+  &:before {
+    content: '\f0e0';
+  }
+
+  &:hover {
+    color: $email;
+  }
 }
 
 .fb_comments {
   box-sizing: border-box;
-  padding: 0 15px 30px;
-  margin: 30px auto 0 auto;
-  border-top: 5px solid #AD0000;
+  border-top: 5px solid $ss-maroon;
+  margin: 30px auto 0;
   max-width: 800px;
-}
+  padding: 0 15px 30px;
+  }
 
-/* =======================
-XII. CREDITS
-======================= */
+// =======================
+// CREDITS
+// =======================
 article.project .credits {
+  display: block;
   margin: 2rem auto;
   max-width: 600px;
-  display: block;}
 
-article.project .credits p {
-  float: left;
-  width: auto;
+  p {
+    display: block;
+    float: left;
+    font-family: $heading-sans-serif;
+    font-size: 13px;
+    margin: 0 1rem 0 0;
+    width: auto;
+  }
+
+  a {
+    font-weight: 600;
+  }
+}
+
+// =======================
+// ADS
+// =======================
+.leaderboardAdvert {
   display: block;
-  font-family: $heading-sans-serif;
-  font-size: 13px;
-  margin: 0 1rem 0 0;
-}
+  margin: 2.5rem auto;
+  text-align: center;
 
-article.project .credits a {
-  font-weight: bold;
-}
+  &:before {
+    color: $gray;
+    content: 'Advertisement';
+    display: block;
+    font-size: 10px;
+    line-height: 10px;
+    position: relative;
+    top: -15px;
+    text-align: center;
+    text-transform: uppercase;
+  }
 
-/* =======================
-XIII. ADS
-======================= */
-
-.leaderboardAdvert{
-    display:block;
-    margin: 2.5rem auto;
-    text-align:center;
-
-    &:before {
-      color: #8A8A8A;
-      font-size: 10px;
-      line-height: 10px;
-      text-transform: uppercase;
-      display: block;
-      text-align: center;
-      content: "Advertisement";
-      position: relative;
-      top: -15px;
-    }
-
-    &--container {
-      width: 320px;
-      height: 50px;
+  &--container {
+    height: 50px;
+    width: 320px;
 
     @media screen and (min-width: 784px) {
-      width: 728px;
       height: 90px;
+      width: 728px;
     }
   }
 
   &--dev {
-    background-color: #DCDCDC;
+    background-color: $ad;
   }
 }
 
-.cubeAdvert{
-    display:block;
-    margin-top: 10px;
-    text-align:left;
+.cubeAdvert {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
 
-    @media screen and (max-width: 740px) {
-      margin: 1.8rem auto;
+  @media screen and (max-width: 740px) {
+    margin: 1.8rem auto;
+  }
+
+  @include mobile {
+    float: none;
+    margin: 0 auto;
+    max-width: 300px;
+    margin: 10px auto 30px;
+  }
+
+  &--container {
+    height: 250px;
+    width: 300px;
+
+    &:before {
+      color: $gray;
+      content: 'Advertisement';
+      display: block;
+      font-size: 10px;
+      line-height: 10px;
+      position: relative;
+      top: -15px;
+      text-transform: uppercase;
     }
+  }
 
-    @include mobile {
-      float: none;
-      margin: 0 auto;
-      max-width: 300px;
-      margin: 10px auto 30px;
-    }
-
-    &--container {
-      width: 300px;
-      height: 250px;
-
-      &:before {
-            color: #8A8A8A;
-            font-size: 10px;
-            line-height: 10px;
-            text-transform: uppercase;
-            display: block;
-            content: "Advertisement";
-            position: relative;
-            top: -15px;
-      }
-
-    }
-
-    &--dev {
-      background-color: #DCDCDC;
-    }
+  &--dev {
+    background-color: $ad;
+  }
 }
 
-.shrinkycubeAdvert{
-    display:block;
-    margin-top: 10px;
-    text-align:left;
+.shrinkycubeAdvert {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
 
-    @include mobile {
-      float: none;
-      margin: 0 auto;
-      max-width: 300px;
-      margin: 10px auto 30px;
+  @include mobile {
+    float: none;
+    margin: 0 auto;
+    max-width: 300px;
+    margin: 10px auto 30px;
+  }
+
+  &--container {
+    height: 250px;
+    width: 300px;
+
+    @media screen and (max-width:784px) {
+      height: 50px;
+      width: 320px;
     }
 
-    &--container {
-      width: 300px;
-      height: 250px;
-      @media screen and (max-width:784px){
-        width:320px;
-        height:50px;
+    &:before {
+      color: $gray;
+      content: 'Advertisement';
+      display: block;
+      font-size: 10px;
+      line-height: 10px;
+      position: relative;
+      top: -15px;
+      text-transform: uppercase;
+
+      @media screen and (max-width:740px) {
+        display: block;
+        text-align: center;
       }
-
-      &:before {
-            color: #8A8A8A;
-            font-size: 10px;
-            line-height: 10px;
-            text-transform: uppercase;
-            display: block;
-            content: "Advertisement";
-            position: relative;
-            top: -15px;
-            @media screen and (max-width:740px){
-            display:block;
-            text-align:center;
-            }
-      }
-
     }
+  }
 
-    &--dev {
-      background-color: #DCDCDC;
-    }
+  &--dev {
+    background-color: $ad;
+  }
 }
 
 @media screen and (max-width: 740px) {
-    .rightBlock .shrinkycubeAdvert {
-        margin: 2.5rem auto 1.8rem;
-    }
+  .rightBlock .shrinkycubeAdvert {
+    margin: 2.5rem auto 1.8rem;
+  }
 }
 
-/* =======================
-XIV. RELATED CONTENT
-======================= */
-
+// =======================
+// RELATED CONTENT
+// =======================
 .related {
   margin: 1em auto;
   max-width: 900px;
 }
 
-.related h5, .related p, .related a {
-  font-family: $body-serif;}
+.related a,
+.related h5,
+.related p {
+  font-family: $body-serif;
+}
 
 .related h5 {
-  font-size:1.4em;
   font-family: $heading-sans-serif;
-  font-weight: bold;
-  margin-bottom: 1.0rem;}
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 
-.related h6{
-  font-size:1.2em;
+.related h6 {
   font-family: $heading-sans-serif;
-  font-weight: bold;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .related p {
-  font-size: 1.0em !important;
-  margin-top: 5px !important;
-  line-height: 1.2em !important;
+  font-size: 1em;
+  line-height: 1.2em;
+  margin-top: 5px;
 }
 
 .related a {
-  color: #333;
+  color: $text;
+  cursor: pointer;
   display: block;
   float: left;
   margin-right: 5%;
   width: 30%;
-  cursor: pointer;
 }
 
-/*img size: 1920x1080px, 16:9 ratio*/
 .related a img {
   margin-bottom: .3rem;
   width: 100%;
 }
 
 .related a:hover {
-  text-decoration: none;}
+  text-decoration: none;
+}
 
 .related a:last-child {
-  margin-right: 0;}
+  margin-right: 0;
+}
 
 @media screen and (max-width: 600px) {
   .related a {
     float: none;
-    margin: 0 0 1.0rem;
+    margin: 0 0 1rem;
     width: 100%;
   }
 
@@ -1038,66 +1022,65 @@ XIV. RELATED CONTENT
     width: 33%;
   }
 
-  .related a h6, .related a p {
+  .related a h6,
+  .related a p {
     float: right;
     width: 65%;
   }
+
   .related a h6 {
-    font-size:1.2em;
-    line-height:1.2em;
+    font-size: 1.2em;
+    line-height: 1.2em;
   }
 }
 
-/* =======================
-XV. FOOTER
-======================= */
-
+// =======================
+// FOOTER
+// =======================
 .footer--content {
-  background-color: #252525;
+  background-color: $charcoal;
+  padding: 10px 0 20px;
   text-align: center;
-  padding: 10px 0 20px 0;
 
   a {
-    color: #fff;
+    color: $white;
   }
 }
 
 .hide--mobile {
   @include mobile {
-    display:none;
+    display: none;
   }
 }
 
-/*
-LOGO
-----------------------------------------------*/
 .footer--wrapper {
+  background-color: $charcoal;
+  height: 80px;
+  padding: 22px 0 0;
   width: 100%;
-  height:80px;
-  background-color: #252525;
-  padding: 22px 0 0 0;
+
   a {
-      margin: 0 auto;
-    }
+    margin: 0 auto;
+  }
 }
 
 .footer--logo {
+  background-image: url('http://interactive.sun-sentinel.com/static/img/sunsentinel-logo-reversed.svg');
+  background-repeat: no-repeat;
+  color: $white;
   display: block;
-  width: 195px;
   height: 40px;
   margin: 0 auto;
-  color: #fff;
-  background-repeat: no-repeat;
-  /*background-position: center-center;*/
-  background-image: url(http://interactive.sun-sentinel.com/static/img/sunsentinel-logo-reversed.svg);
+  width: 195px;
 }
 
 .footer--content {
   a {
     margin-right: 10px;
+
     @media screen and (max-width:510px) {
+      font-size: .8rem;
       margin-right: 5px;
-      font-size: 0.8rem;
     }
   }
 }
@@ -1105,4 +1088,3 @@ LOGO
 .footer--content a:first-of-type {
   cursor: default;
 }
-

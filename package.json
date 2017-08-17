@@ -67,6 +67,7 @@
     "scrollreveal": "^3.3.6",
     "swiper": "^3.4.2",
     "topojson": "^3.0.0",
+    "video.js": "^6.2.5",
     "webpack": "^2.4.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.18.0"

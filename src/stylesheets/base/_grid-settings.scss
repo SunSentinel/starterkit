@@ -1,18 +1,9 @@
-/* Interactive stylesheet */
-$xl-desktop-width: 1025px;
-$desktop-width: 1024px;
+$desktop-width: 769px;
 $tablet-width: 768px;
 $mobile-width: 480px;
 
-
-@mixin xl-desktop {
-  @media screen and (min-width: #{$xl-desktop-width}) {
-    @content;
-  }
-}
-
 @mixin desktop {
-  @media screen and (max-width: #{$desktop-width}) {
+  @media screen and (min-width: #{$desktop-width}) {
     @content;
   }
 }
@@ -28,17 +19,3 @@ $mobile-width: 480px;
     @content;
   }
 }
-
-
-
-
-
-
-/* p2p style */
-$p2p-max-width: 720px;
-
-$small-down: 419px;
-$small-up: 420px;
-
-$small-screen-down: new-breakpoint(max-width $small-down);
-$small-screen-up: new-breakpoint(min-width $small-up);

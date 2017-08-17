@@ -1,20 +1,30 @@
 @media print {
+	article.project .container {
+		width: 100%;
 
-article.project .container {
-	width: 100%;
-	p, h1, h2, h3, h4, h5, h6 {
-		color: #000 !important;
+		h1, h2, h3, h4, h5, h6, p {
+			color: #000;
+		}
 	}
-}
 
-#topper {
-	h1, h2, p {
-		color: #000 !important;
+	#topper {
+		h1, h2, p {
+			color: #000;
+		}
 	}
-}
 
-.brightcove-embed, .advert, .nav-holder, .shareline, .credits, .related, .fb_comments, footer {
-	display: none !important;
-}
+	.advert,
+	.brightcove-embed,
+	.credits,
+	.fb_comments,
+	.nav-holder,
+	.related,
+	.shareline,
+	footer {
+		display: none;
+	}
 
+	a[href]:after {
+		content: "";
+	}
 }

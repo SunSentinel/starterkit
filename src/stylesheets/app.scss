@@ -1,15 +1,15 @@
 @import 'normalize';
-@import 'bourbon';
-@import 'neat';
-@import url('https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css');
 
 @import 'base/grid-settings';
 @import 'base/variables';
 
 @import 'base/base';
 @import 'base/pull-quote';
-@import 'base/video';
+@import 'base/video-thumb';
 @import 'base/subscribe';
+@import 'base/parallax';
 
-//@import 'base/typography';
-//@import 'atoms/container';
+@import 'vendor/swiper';
+@import 'vendor/video-js';
+
+@import 'base/print';
