@@ -21,7 +21,7 @@
 
   <p>Suspendisse potenti. Phasellus elementum leo scelerisque diam aliquam, quis sodales diam laoreet. Vivamus euismod orci nec dui dapibus maximus. Quisque blandit ornare orci, nec porta nibh lobortis nec. Mauris vel massa vulputate, consectetur magna et, pellentesque orci. Fusce iaculis magna at magna blandit, vel venenatis leo fringilla. Pellentesque quis neque ut mi finibus molestie. Phasellus condimentum odio id lorem fermentum eleifend. Curabitur convallis eu tortor a commodo.</p>
 
-  {% import "layouts/image_inline.html" as block %}
+  {% import "macros/image_inline.html" as block %}
   {{ block.input('images/placeholder.jpg', 'Suspendisse potenti. Phasellus elementum leo. (Name Here/Sun Sentinel)') }}
 
   <p>Nulla ultricies feugiat diam a tempus. Cras volutpat nisl urna. Vestibulum elementum nunc eu massa facilisis imperdiet. Curabitur lorem odio, laoreet eu vulputate id, viverra at enim. Mauris pretium scelerisque nisl ut ullamcorper. Fusce tempus erat eu felis fermentum, eget volutpat nunc fermentum. Sed non viverra lorem. In tincidunt nibh tortor, a pharetra augue dapibus sed. Morbi vel ante sed nisl efficitur porttitor non id neque. Donec tempor accumsan eros eget porta. Nunc vulputate, tortor a dapibus efficitur, lacus quam fringilla ante, ac dignissim metus mi nec mauris. Aliquam non ligula lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus arcu libero, tempor non diam at, luctus euismod risus.</p>
@@ -34,7 +34,7 @@
 
 <p>Aliquam pharetra efficitur magna. Proin eleifend viverra elit, eu vestibulum leo ultricies sit amet. In quis eleifend ipsum. In vitae erat quam. Mauris vel mauris diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus felis non est hendrerit lacinia. Ut sed libero aliquam, vulputate risus ut, volutpat odio. Vivamus lobortis lacus id congue lacinia. Aliquam erat volutpat. Suspendisse id sem quis diam blandit sollicitudin. Morbi tempus lectus sit amet condimentum porttitor. Nam aliquet, est vitae elementum pellentesque, velit libero posuere tellus, quis volutpat est tellus quis justo. Suspendisse ornare malesuada magna, ut efficitur augue euismod et. Aenean commodo mi dignissim elit tempor, non gravida lectus dictum.</p>
 
-{% import "layouts/image_parallax.html" as block %}
+{% import 'macros/image_parallax.html' as block %}
 {{ block.input(
 'http://projects.sun-sentinel.com/projects/test/static/img/full-2400.jpg',
 'http://projects.sun-sentinel.com/projects/test/static/img/full-2400.jpg',
@@ -47,7 +47,7 @@
 
 <p>Aliquam pharetra efficitur magna. Proin eleifend viverra elit, eu vestibulum leo ultricies sit amet. In quis eleifend ipsum. In vitae erat quam. Mauris vel mauris diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus felis non est hendrerit lacinia. Ut sed libero aliquam, vulputate risus ut, volutpat odio. Vivamus lobortis lacus id congue lacinia. Aliquam erat volutpat. Suspendisse id sem quis diam blandit sollicitudin. Morbi tempus lectus sit amet condimentum porttitor. Nam aliquet, est vitae elementum pellentesque, velit libero posuere tellus, quis volutpat est tellus quis justo. Suspendisse ornare malesuada magna, ut efficitur augue euismod et. Aenean commodo mi dignissim elit tempor, non gravida lectus dictum.</p>
 
-{% import "layouts/pull_quote.html" as block %}
+{% import 'macros/pull_quote.html' as block %}
 {{ block.input(
   'Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum!',
   'Speaker'
@@ -59,7 +59,7 @@
 
 <p>Vestibulum tincidunt, ante sit amet scelerisque blandit, ex risus efficitur enim, eu laoreet eros felis sed tortor. Curabitur lacus justo, lacinia at purus in, egestas maximus lorem. Proin neque eros, accumsan eu felis ac, sagittis convallis ipsum. Maecenas et ultricies augue, nec maximus mi. Phasellus lobortis turpis justo, id convallis massa elementum id. Maecenas tempus ac augue at suscipit. Duis venenatis maximus mi, in dictum enim tempor nec.</p>
 
-{% import "layouts/video_thumb.html" as block %}
+{% import 'macros/video_thumb.html' as block %}
 {{ block.input(
   'http://www.sunsentinel.com/',
   'http://projects.sun-sentinel.com/projects/test/static/img/full-2400.jpg'
