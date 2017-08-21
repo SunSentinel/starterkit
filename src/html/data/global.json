@@ -23,7 +23,7 @@
 
   "absolute_url": "interactive.sun-sentinel.com/test",
 
-  "topper_img": "http://projects.sun-sentinel.com/projects/test/static/img/header.jpg",
+  "topper_img": "images/header.jpg",
   "intro_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
 
   "reporters": [{
