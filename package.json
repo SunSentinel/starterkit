@@ -1,7 +1,7 @@
 {
   "name": "starterkit",
   "version": "0.1.0",
-  "description": "A starting point for interactive and data viz projects for the Sun Sentinel",
+  "description": "A Gulp template for starting news apps at the Sun Sentinel",
   "license": "MIT",
   "engines": {
     "node": ">=6.3.0",
@@ -20,7 +20,6 @@
     "start": "gulp",
     "gulp": "gulp",
     "build": "gulp build",
-    "gh-pages": "gulp gh-pages",
     "dev:test": "mocha ./gulpfile.js/**/*.test.js"
   },
   "dependencies": {
@@ -40,7 +39,6 @@
     "gulp-changed": "^2.0.0",
     "gulp-cssnano": "2.1.2",
     "gulp-data": "1.2.1",
-    "gulp-gh-pages": "0.5.4",
     "gulp-htmlmin": "3.0.0",
     "gulp-if": "2.0.2",
     "gulp-notify": "^3.0.0",

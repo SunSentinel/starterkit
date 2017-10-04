@@ -2,7 +2,7 @@
 
 ## About
 
-A fully featured configurable gulp asset pipeline for creating embeddable interactive graphics and visualizations.
+A Gulp template for starting news apps and interactive projects at the Sun Sentinel.
 
 ## Installation
 
