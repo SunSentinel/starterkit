@@ -66,12 +66,7 @@ module.exports = {
   fonts: {
     extensions: ["woff2", "woff", "eot", "ttf", "svg"]
   },
-
-  ghPages: {
-    branch: "gh-pages",
-    cacheDir: path.join(os.tmpdir(), pkg.name || "blendid")
-  },
-
+  
   svgSprite: {
     svgstore: {}
   },
