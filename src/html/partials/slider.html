@@ -4,7 +4,7 @@
 			{% for photo in photos %}
 			<div class="swiper-slide">
 				<img class="slider__img" src="{{ photo.src }}">
-				<p class="slider__caption">{{ photo.caption }}</p>
+				<figcaption class="caption">{{ photo.caption }}</figcaption>
 			</div>
 			{% endfor %}
 		</div>

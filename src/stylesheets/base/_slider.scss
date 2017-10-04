@@ -1,26 +1,9 @@
 .slider {
-  margin: 30px auto 0;
+  margin: 30px auto;
   font-size: 1em;
 }
 
 .slider__img {
   display: block;
   width: 100%;
-}
-
-.slider__caption {
-  color: $gray;
-  box-sizing: border-box;
-  font-family: $caption-font;
-  font-size: 1.2em;
-  line-height: 140%;
-  margin-top: 5px;
-  padding: 0 10px;
-
-  @include mq(tablet) {
-  font-size: 1.4em;
-  }
-  @include mq(desktop) {
-  padding: 0;
-  }
 }

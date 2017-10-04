@@ -4,8 +4,8 @@ export default function doSlider() {
 	const swiper = new Swiper('.swiper-container', {
 	  speed: 400,
 	  spaceBetween: 20,
-	  slidesPerView: 3,
-	  slidesPerGroup: 3,
+	  slidesPerView: 2,
+	  slidesPerGroup: 2,
 	  nextButton: '.swiper-button-next',
 	  prevButton: '.swiper-button-prev',
 	  preloadImages: false,
