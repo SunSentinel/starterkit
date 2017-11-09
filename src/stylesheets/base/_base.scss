@@ -412,6 +412,33 @@ h6 {
   }
 }
 
+@media screen and (max-width:1000px){
+.bottom-nav{
+  position:fixed;
+  bottom:98px;
+  left:0;
+  right:0;
+  text-align:center;
+  z-index:2;
+  border-radius:5px;
+  .nav-list{
+    display:block;
+    width:100%;
+    overflow:auto;
+    white-space:nowrap;
+    background-color:$charcoal;
+
+  }
+ .nav-links{
+  max-width:100%;
+  background-color:$charcoal;
+  float:none;
+  color:$white;
+  width:auto;
+  border-left:1px solid $white;
+ }
+}
+}
 // =======================
 // TEXT BLOCKS
 // =======================

@@ -43,15 +43,23 @@ export default function doNavigation() {
       return;
 
     } else if (windowWidth < 1000) {
+
+
       var menuVisible = false;
       $('.nav-list').css({
         'display': 'none'
+      });
+      $('.bottom-nav .nav-list').css({
+        'display': 'block'
       });
       $(".nav-label").click(function() {
         if (menuVisible) {
           $('.nav-list').css({
             'display': 'none'
           });
+          $('.bottom-nav .nav-list').css({
+        'display': 'block'
+      });
           menuVisible = false;
           return;
         }
@@ -67,10 +75,25 @@ export default function doNavigation() {
         $(".nav-list").css({
           'display': 'none'
         });
+        $('.bottom-nav .nav-list').css({
+        'display': 'block'
+      });
         menuVisible = false;
       });
     }
   }).resize();
+  $(window).scroll(function(){
+    if($(window).scrollTop()+ $(window).height() == $(document).height()){
+      $(".bottom-nav .nav-list").css({
+        'display':'none'
+      })
+    }else{
+      $(".bottom-nav .nav-list").css({
+        'display':'block'
+      })
+    }
+  })
+
 };
 
 export { doNavigation };
