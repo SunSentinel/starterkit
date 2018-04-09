@@ -66,7 +66,7 @@ module.exports = {
   fonts: {
     extensions: ["woff2", "woff", "eot", "ttf", "svg"]
   },
-  
+
   svgSprite: {
     svgstore: {}
   },
@@ -89,4 +89,3 @@ module.exports = {
     }
   }
 }
-
