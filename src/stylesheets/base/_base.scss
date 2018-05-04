@@ -91,6 +91,10 @@ p {
   line-height: 6rem;
   margin: 0 1rem 0 0;
   padding-top: 0;
+  @include mobile{
+    font-size:5rem;
+    line-height:4rem;
+  }
 }
 
 h1,
@@ -100,9 +104,35 @@ h4,
 h5,
 h6 {
   color: $text;
-  font-family: $heading-serif;
-  font-weight: 500;
+  font-family: $heading-sans-serif;
+  font-weight: 600;
+  max-width:600px;
 }
+
+h1{
+  font-family:$heading-serif;
+  font-size:3.5em;
+  line-height:1.3em;
+  margin:1em auto;
+  @include tablet{
+    font-size:2.5em;
+  }
+  @include mobile{
+    font-size:1.8em;
+  }
+}
+h2{
+  font-size:2.5em;
+  line-height:1.3em;
+  margin:1em auto;
+  @include tablet{
+    font-size:2em;
+  }
+  @include mobile{
+    font-size:1.5em;
+  }
+}
+
 
 .bold {
   font-weight: 600;
@@ -135,22 +165,19 @@ h6 {
   }
 }
 
-#topper h2 {
-  color: $text;
-  font-family: $body-serif;
-  font-size: 1.5em;
+#topper p {
+  color: $white;
+  font-family: $heading-sans-serif;
+  font-size: 1.1em;
   line-height: 110%;
   margin: 1rem auto 2rem;
-  max-width: 700px;
+  max-width: 600px;
 
   @include tablet {
-    font-size: 1.4em;
-    margin: .5rem 3%;
+    color:$text;
+    margin: 1.2rem auto;
   }
 
-  @include mobile {
-    font-size: 1.1em;
-  }
 }
 
 .topper--visual {
@@ -191,21 +218,17 @@ h6 {
   }
 }
 
-.topper--byline {
-  color: $gray;
-  font-size: 1em;
-
+#topper .topper--byline {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
 
   p {
-    color: $text;
-    font-family: $body-serif;
-    font-size: 18px;
+    color: $gray;
+    font-size: 16px;
     font-weight: 300;
     line-height: 150%;
-
+   margin:.5rem auto;
     @media screen and (max-width: 530px) {
       font-size: 16px;
     }
@@ -462,7 +485,7 @@ section:first-of-type {
 article.project .container {
   p {
     font-family: $body-serif;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.618em;
     margin: 0 auto 1.6rem;
     max-width: 600px;
@@ -470,13 +493,41 @@ article.project .container {
     &:last-of-type {
       margin-bottom: 0;
     }
+    @include mobile{
+      font-size:16px;
+    }
   }
 
   h3 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    margin: 2rem auto 1.6rem;
-    max-width: 600px;
+    font-size: 2em;
+    line-height: 1.3em;
+    margin: 2em auto 1em;
+    @include tablet{
+      font-size:1.5em;
+    }
+    @include mobile{
+      font-size:1.2em;
+    }
+  }
+  h4{
+    font-size:1.5em;
+    line-height:1.5em;
+    margin:2em auto 1em;
+    @include tablet{
+      font-size:1.2em;
+      line-height:1.3em;
+    }
+    @include mobile{
+      font-size:1em;
+    }
+  }
+  h5{
+    font-size:1em;
+    line-height:1.5em;
+    margin:2em auto 1em;
+    @include mobile{
+      font-size:0.9em;
+    }
   }
 }
 
@@ -800,7 +851,9 @@ p.source {
     font-size: 1.6em;
     line-height: 1.5em;
     width: 1.6em;
-
+    @include mobile{
+      font-size:1.2em;
+    }
     &:before {
       font-family: 'FontAwesome';
     }
