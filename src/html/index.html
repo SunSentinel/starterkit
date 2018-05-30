@@ -8,7 +8,7 @@
 
 
 {% block content %}
-{% include 'layouts/bottom-nav.html' %}
+{% include 'layouts/hidden_third_party_nav.html' %}
 
 <div id="container">
 {% include 'layouts/feature_topper.html' %}
@@ -16,6 +16,9 @@
 <article class="project">
 <div class="container">
   <p><span class="dropcap">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum, nulla augue ornare orci, ut dapibus erat nibh eget dolor. Fusce ex eros, condimentum vitae odio non, dictum semper tellus. Donec viverra, ipsum eget dignissim euismod, nulla orci lacinia felis, eu sollicitudin tortor ante ac lorem. Vivamus purus dui, tincidunt sed consectetur in, mollis ac nulla. Suspendisse ipsum libero, auctor ut enim eu, eleifend placerat purus. Donec eget congue mi. Donec justo sapien, commodo finibus nisl ac, viverra cursus libero. Proin semper vel tortor id facilisis. Sed malesuada ultricies imperdiet. Integer ultricies a mi sed egestas. Maecenas consectetur tincidunt magna, eu aliquet arcu. Donec in augue et ante interdum pharetra eget vel purus. Nulla iaculis faucibus velit, at vestibulum orci. Maecenas rutrum at lectus ac euismod. Aenean augue ex, eleifend et faucibus nec, venenatis sed purus. Donec pretium consequat est, non finibus magna commodo sed.</p>
+
+  {% import "partials/video_brightcove.html" as block %}
+  {{ block.input('96288623') }}
 
   <p>Aliquam pharetra efficitur magna. Proin eleifend viverra elit, eu vestibulum leo ultricies sit amet. In quis eleifend ipsum. In vitae erat quam. Mauris vel mauris diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus felis non est hendrerit lacinia. Ut sed libero aliquam, vulputate risus ut, volutpat odio. Vivamus lobortis lacus id congue lacinia. Aliquam erat volutpat. Suspendisse id sem quis diam blandit sollicitudin. Morbi tempus lectus sit amet condimentum porttitor. Nam aliquet, est vitae elementum pellentesque, velit libero posuere tellus, quis volutpat est tellus quis justo. Suspendisse ornare malesuada magna, ut efficitur augue euismod et. Aenean commodo mi dignissim elit tempor, non gravida lectus dictum.</p>
 
@@ -47,6 +50,8 @@
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum, nulla augue ornare orci, ut dapibus erat nibh eget dolor. Fusce ex eros, condimentum vitae odio non, dictum semper tellus. Donec viverra, ipsum eget dignissim euismod, nulla orci lacinia felis, eu sollicitudin tortor ante ac lorem. Vivamus purus dui, tincidunt sed consectetur in, mollis ac nulla. Suspendisse ipsum libero, auctor ut enim eu, eleifend placerat purus. Donec eget congue mi. Donec justo sapien, commodo finibus nisl ac, viverra cursus libero. Proin semper vel tortor id facilisis. Sed malesuada ultricies imperdiet. Integer ultricies a mi sed egestas. Maecenas consectetur tincidunt magna, eu aliquet arcu. Donec in augue et ante interdum pharetra eget vel purus. Nulla iaculis faucibus velit, at vestibulum orci. Maecenas rutrum at lectus ac euismod. Aenean augue ex, eleifend et faucibus nec, venenatis sed purus. Donec pretium consequat est, non finibus magna commodo sed.</p>
 
+{% include 'partials/slider.html' %}
+
 <p>Aliquam pharetra efficitur magna. Proin eleifend viverra elit, eu vestibulum leo ultricies sit amet. In quis eleifend ipsum. In vitae erat quam. Mauris vel mauris diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus felis non est hendrerit lacinia. Ut sed libero aliquam, vulputate risus ut, volutpat odio. Vivamus lobortis lacus id congue lacinia. Aliquam erat volutpat. Suspendisse id sem quis diam blandit sollicitudin. Morbi tempus lectus sit amet condimentum porttitor. Nam aliquet, est vitae elementum pellentesque, velit libero posuere tellus, quis volutpat est tellus quis justo. Suspendisse ornare malesuada magna, ut efficitur augue euismod et. Aenean commodo mi dignissim elit tempor, non gravida lectus dictum.</p>
 
 {% import 'partials/pull_quote.html' as block %}
@@ -64,7 +69,7 @@
 {% import 'partials/video_thumb.html' as block %}
 {{ block.input(
   'http://www.sunsentinel.com/',
-  'http://projects.sun-sentinel.com/projects/test/static/img/full-2400.jpg'
+  'images/header.jpg'
 )}}
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum, nulla augue ornare orci, ut dapibus erat nibh eget dolor. Fusce ex eros, condimentum vitae odio non, dictum semper tellus. Donec viverra, ipsum eget dignissim euismod, nulla orci lacinia felis, eu sollicitudin tortor ante ac lorem. Vivamus purus dui, tincidunt sed consectetur in, mollis ac nulla. Suspendisse ipsum libero, auctor ut enim eu, eleifend placerat purus. Donec eget congue mi. Donec justo sapien, commodo finibus nisl ac, viverra cursus libero. Proin semper vel tortor id facilisis. Sed malesuada ultricies imperdiet. Integer ultricies a mi sed egestas. Maecenas consectetur tincidunt magna, eu aliquet arcu. Donec in augue et ante interdum pharetra eget vel purus. Nulla iaculis faucibus velit, at vestibulum orci. Maecenas rutrum at lectus ac euismod. Aenean augue ex, eleifend et faucibus nec, venenatis sed purus. Donec pretium consequat est, non finibus magna commodo sed.</p>

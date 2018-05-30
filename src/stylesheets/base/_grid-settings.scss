@@ -1,5 +1,6 @@
 $desktop-width: 769px;
 $tablet-width: 768px;
+$custom-width:700px;
 $mobile-width: 480px;
 
 @mixin desktop {
@@ -9,6 +10,12 @@ $mobile-width: 480px;
 }
 
 @mixin tablet {
+    @media screen and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin custom {
     @media screen and (max-width: #{$tablet-width}) {
         @content;
     }

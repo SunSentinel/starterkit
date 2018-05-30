@@ -39,6 +39,7 @@
 		<link rel="icon" type="image/ico" href="favicon.ico">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Source+Serif+Pro" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 		<link rel="stylesheet" href="stylesheets/app.css">
 		{% endblock %}
 
@@ -48,7 +49,7 @@
 			((((window.trb || (window.trb = {})).data || (trb.data = {})).metrics || (trb.data.metrics = {})).thirdparty = {
 				pageName: 'sfss:interactive:{{ omniture_section }}:{{ omniture_project }}:sfss:interactive:dataproject.',
 				channel: '{{ omniture_section }}',
-				server: 'interactive.sun-sentinel.com',
+				server: 'projects.sun-sentinel.com',
 				hier1: 'sun-sentinel:{{ omniture_section }}',
 				hier2: '{{ omniture_section }}',
 				prop1: 'D=pageName',
@@ -79,16 +80,13 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="//cdn.gigya.com/js/gigya.js?apiKey=2_UtI1tkvSb0o7fJvh22ub59QFt86uh2nTUw_6vZ9Az-gwt9GERmEMJyT0ROaXY9GK"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="https://pym.nprapps.org/pym.v1.min.js"></script>
+		<!--<script src="https://pym.nprapps.org/pym.v1.min.js"></script>-->
 	  <script src="javascripts/app.js"></script>
 	{% endblock javascript %}
 
 	{% block script %}
 	{% endblock %}
 
-	<!-- UNCOMMENT FOR BRIGHTCOVE VIDEO
-	<script language='JavaScript' type='text/javascript' src='https://sadmin.brightcove.com/js/BrightcoveExperiences.js'></script>
-	<script type='text/javascript'>brightcove.createExperiences();</script> -->
 
 	<!-- {% if not DEBUG %} -->
 		<script src="http://s3.amazonaws.com/media.apps.chicagotribune.com/ads/v2.1.4/ads.min.js"></script>

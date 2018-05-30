@@ -10,6 +10,7 @@ import { doQuoteReveal } from './modules/utilities/quotes';
 import { doSlider } from './modules/utilities/slider';
 import { doShare } from './modules/utilities/share';
 import { doVideo } from './modules/utilities/video';
+import { doMap } from './modules/utilities/map';
 
 doLazyLoad();
 doNavigation();
@@ -18,5 +19,6 @@ doQuoteReveal();
 doSlider();
 doShare();
 doVideo();
+doMap();
 
 console.log(`app.js has loaded!`);

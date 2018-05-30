@@ -2,12 +2,20 @@ import Swiper from 'swiper';
 
 export default function doSlider() {
 	const swiper = new Swiper('.swiper-container', {
-	  speed: 400,
+		// If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+		speed: 400,
 	  spaceBetween: 20,
 	  slidesPerView: 2,
 	  slidesPerGroup: 2,
-	  nextButton: '.swiper-button-next',
-	  prevButton: '.swiper-button-prev',
 	  preloadImages: false,
 	  lazyLoading: true,
 	  a11y: true,
