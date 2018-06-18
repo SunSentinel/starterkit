@@ -30,7 +30,7 @@ Once you're finished, build out the project for production with run
 
 ### Deploying
 
-Starterkit makes a stattic project that will go onto our Amazon S3 bucket at projects.sun-sentinel.com.
+Starterkit generates a static project that will go onto our Amazon S3 bucket at projects.sun-sentinel.com.
 
 We automate our deployment process with the [gulp-awspublish](https://github.com/pgherveou/gulp-awspublish) library, which takes the 'public' folder and uploads it to the S3 bucket.
 
