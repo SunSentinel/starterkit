@@ -4,7 +4,7 @@
   "description": "A Gulp template for starting news apps at the Sun Sentinel",
   "license": "MIT",
   "engines": {
-    "node": ">=6.3.0",
+    "node": ">=8.9.0",
     "npm": ">=3.10.3"
   },
   "main": "gulpfile.js/index.js",
