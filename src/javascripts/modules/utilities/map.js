@@ -1,4 +1,12 @@
+import promise from 'es6-promise';
+import fetch from 'isomorphic-fetch';
+import 'babel-polyfill';
 import L from 'leaflet';
+import {
+  GeoSearchControl,
+  GoogleProvider
+} from 'leaflet-geosearch';
+
 export default function doMap() {
 
 //SET UP BASIC MAP
@@ -10,16 +18,83 @@ var baseMap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y
 });
 
 var map = L.map('map', {
-  center: [26.122173, -80.150485],
+  center: mapCenter,
   zoom: 15,
-  maxZoom: 17,
-  minZoom: 12,
+  //maxZoom: 17,
+  //minZoom: 12,
   zoomControl: false,
   layers: [baseMap]
 });
 
-//DO WHATEVER YOU NEED HERE TO MAP YOUR DATA
+var pathStyle = {
+  fillOpacity: 0.1,
+  color: "#333",
+  weight: 3
+};
 
+//DO WHATEVER YOU NEED HERE TO MAP YOUR DATA
+var provider = new GoogleProvider();
+var ww = Wherewolf();
+
+
+function showRace(latLng, race){
+  $("#result").html('Hello');
+  console.log(latLng);
+  if(race){
+   var currentLocation = new L.marker(latLng, {
+      radius:8
+    }).addTo(map);
+    $("#result").html("<p>State House District " + race.properties.NAME + "</p>");
+  }else{
+    $("#result").html("<p>No race in your area.</p>");
+  }
+}
+
+$.getJSON("fl-house-18primary.geojson", function(data){
+  new L.geoJSON(data,{
+    style: pathStyle
+  }).addTo(map);
+})
+
+
+$.getJSON("fl-house-18primary.geojson", function(data){
+
+
+  ww.add("statehouse", data);
+  console.log(data);
+  var form = document.querySelector('form');
+  var input = document.querySelector('input[type="text"]');
+
+  form.addEventListener('submit', function(event){
+    console.log("Hello world");
+    event.preventDefault();
+    provider.search({
+      query: input.value
+    }).then(function(results, status){
+      console.log(results);
+      var latLng, race;
+
+      for (var i = 0; i < results.length; i++) {
+        latLng = {
+          lng: results[0].x,
+          lat: results[0].y
+        };
+
+        race = ww.find(latLng,{
+          layer:"statehouse",
+          wholeFeature: true
+        });
+
+        if(race){
+          return showRace(latLng, race);
+        }
+    }
+    return showRace(latLng, race);
+  });
+  return false;
+});
+
+});
 
 
 //RESPONSIVE DESIGN FOR BREAKPOINTS
