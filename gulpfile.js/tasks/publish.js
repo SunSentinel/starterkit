@@ -2,16 +2,21 @@ var path = require('path')
 var rename = require('gulp-rename')
 var gulp         = require('gulp')
 var awspublish = require('gulp-awspublish')
+var date = new Date();
 
 
 var deployTask = function() {
-
+  
   gulp.task('deploys3', function() {
     console.log("Publishing...")
-    // Save the project name to name the deployed folder.
-    var projectName = process.cwd().split(path.sep).pop()
 
-    // create a new publisher using S3 options
+    // Save the project name to name the deployed folder.
+    var d = new Date();
+    var currentYear = d.getFullYear();
+    var projectName = process.cwd().split(path.sep).pop()
+    var projectPath = currentYear + '/' + projectName
+
+    // S3 options
     var publisher = awspublish.create({
       region: 'us-east-1',
       params: {
@@ -29,7 +34,7 @@ var deployTask = function() {
     return gulp.src('./public/**')
       .pipe(
         rename(function(path) {
-          path.dirname = projectName + "/" + path.dirname;
+          path.dirname = projectPath + "/" + str(date.getFullYear()) + "/" + path.dirname;
         })
       )
       // publisher will add Content-Length, Content-Type and headers specified above
